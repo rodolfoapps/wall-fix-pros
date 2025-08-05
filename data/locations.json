@@ -495,6 +495,51 @@
       "responseTime": "Within 2-3 hours",
       "emergencyService": true,
       "specialties": ["Historic homes", "Growing communities", "Residential services", "Commercial buildings"]
+    },
+    "green-castle": {
+      "name": "Green Castle",
+      "slug": "green-castle",
+      "state": "pennsylvania",
+      "stateAbbrev": "PA",
+      "isHeadquarters": false,
+      "population": "4,048",
+      "coordinates": { "lat": 39.7909, "lng": -77.7253 },
+      "description": "Professional drywall services in Green Castle, PA. Quality installation and repair for residential homes, small businesses, and rural properties.",
+      "neighborhoods": ["Downtown Green Castle", "Antrim Township", "Montgomery Township", "Peters Township"],
+      "zipCodes": ["17225"],
+      "responseTime": "Within 2-3 hours",
+      "emergencyService": true,
+      "specialties": ["Small town residential", "Rural properties", "Agricultural buildings", "Local businesses"]
+    },
+    "chambersburg": {
+      "name": "Chambersburg",
+      "slug": "chambersburg",
+      "state": "pennsylvania",
+      "stateAbbrev": "PA",
+      "isHeadquarters": false,
+      "population": "21,903",
+      "coordinates": { "lat": 39.9371, "lng": -77.6611 },
+      "description": "Comprehensive drywall services in Chambersburg, PA. Professional installation and repair for residential, commercial, and industrial properties throughout Franklin County.",
+      "neighborhoods": ["Downtown Chambersburg", "Scotland", "Fayetteville", "Guilford Township", "Hamilton Township"],
+      "zipCodes": ["17201", "17202"],
+      "responseTime": "Within 2-3 hours",
+      "emergencyService": true,
+      "specialties": ["Commercial buildings", "Industrial facilities", "Healthcare facilities", "Educational institutions"]
+    },
+    "gettysburg": {
+      "name": "Gettysburg",
+      "slug": "gettysburg",
+      "state": "pennsylvania",
+      "stateAbbrev": "PA",
+      "isHeadquarters": false,
+      "population": "7,106",
+      "coordinates": { "lat": 39.8309, "lng": -77.2311 },
+      "description": "Historic drywall services in Gettysburg, PA. Specializing in historic preservation, battlefield tourism properties, and residential services in this National Military Park community.",
+      "neighborhoods": ["Historic Downtown", "Battlefield Area", "Cumberland Township", "Straban Township"],
+      "zipCodes": ["17325"],
+      "responseTime": "Within 2-3 hours",
+      "emergencyService": true,
+      "specialties": ["Historic preservation", "Tourism properties", "Civil War era buildings", "Museum-quality restorations"]
     }
   }
 }
