@@ -465,6 +465,36 @@
       "responseTime": "Within 2-3 hours",
       "emergencyService": true,
       "specialties": ["Residential services", "Historic homes", "Small commercial", "Custom work"]
+    },
+    "harpers-ferry": {
+      "name": "Harpers Ferry",
+      "slug": "harpers-ferry",
+      "state": "west-virginia",
+      "stateAbbrev": "WV",
+      "isHeadquarters": false,
+      "population": "285",
+      "coordinates": { "lat": 39.3254, "lng": -77.7394 },
+      "description": "Historic drywall services in Harpers Ferry, WV. Specializing in historic preservation and restoration work for this National Historical Park community.",
+      "neighborhoods": ["Historic Lower Town", "Bolivar Heights", "Virginius Island", "Camp Hill"],
+      "zipCodes": ["25425"],
+      "responseTime": "Within 2-3 hours",
+      "emergencyService": true,
+      "specialties": ["Historic preservation", "National Park properties", "Restoration work", "Period-appropriate materials"]
+    },
+    "charles-town": {
+      "name": "Charles Town",
+      "slug": "charles-town",
+      "state": "west-virginia",
+      "stateAbbrev": "WV",
+      "isHeadquarters": false,
+      "population": "6,534",
+      "coordinates": { "lat": 39.2890, "lng": -77.8597 },
+      "description": "Professional drywall services in Charles Town, WV. Quality installation and repair for residential homes, historic properties, and growing communities.",
+      "neighborhoods": ["Historic Charles Town", "Ranson", "Jefferson Orchards", "Middleway"],
+      "zipCodes": ["25414"],
+      "responseTime": "Within 2-3 hours",
+      "emergencyService": true,
+      "specialties": ["Historic homes", "Growing communities", "Residential services", "Commercial buildings"]
     }
   }
 }
