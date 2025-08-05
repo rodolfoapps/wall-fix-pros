@@ -1,0 +1,31 @@
+{
+  "name": "Wall Fix Pros",
+  "address": {
+    "street": "4580 Mack Ave Suite",
+    "city": "Frederick",
+    "state": "MD",
+    "zipCode": "21703",
+    "full": "DC Generals Roofing 4580 Mack Ave Suite Frederick, MD 21703"
+  },
+  "contact": {
+    "phone": "(301) 555-0199",
+    "email": "info@wallfixpros.com",
+    "emergencyPhone": "(301) 555-0199"
+  },
+  "hours": {
+    "monday": "7:00 AM - 7:00 PM",
+    "tuesday": "7:00 AM - 7:00 PM",
+    "wednesday": "7:00 AM - 7:00 PM",
+    "thursday": "7:00 AM - 7:00 PM",
+    "friday": "7:00 AM - 7:00 PM",
+    "saturday": "8:00 AM - 6:00 PM",
+    "sunday": "9:00 AM - 5:00 PM"
+  },
+  "license": "MHIC #123456",
+  "insurance": "Fully Licensed & Insured",
+  "serviceRadius": "50 miles from Frederick, MD",
+  "emergencyServices": true,
+  "yearEstablished": 2015,
+  "employees": "25+ Certified Professionals",
+  "serviceArea": "Maryland, Virginia, West Virginia, Pennsylvania"
+}

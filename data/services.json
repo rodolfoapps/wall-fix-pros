@@ -1,0 +1,232 @@
+{
+  "drywall-installation": {
+    "name": "Drywall Installation",
+    "slug": "drywall-installation",
+    "shortDescription": "Professional drywall installation for new construction and renovations",
+    "longDescription": "Our expert team provides comprehensive drywall installation services for residential and commercial properties. We handle everything from measuring and cutting to hanging and finishing, ensuring a smooth, professional result that's ready for painting or texturing.",
+    "benefits": [
+      "Expert installation by certified professionals",
+      "High-quality materials and tools",
+      "Precise measurements and cuts",
+      "Clean, efficient work process",
+      "Warranty on all installation work"
+    ],
+    "process": [
+      "Site assessment and measurements",
+      "Material selection and ordering",
+      "Preparation of work area",
+      "Professional installation",
+      "Quality inspection and cleanup"
+    ],
+    "priceRange": "$2.50 - $4.50 per sq ft",
+    "timeline": "1-3 days depending on project size",
+    "warranty": "5-year workmanship warranty"
+  },
+  "drywall-repair": {
+    "name": "Drywall Repair",
+    "slug": "drywall-repair",
+    "shortDescription": "Expert drywall repair services for holes, cracks, and damage",
+    "longDescription": "From small nail holes to large damaged sections, our skilled technicians can repair any drywall damage. We match textures perfectly and ensure seamless repairs that blend invisibly with your existing walls.",
+    "benefits": [
+      "Seamless repairs that match existing walls",
+      "Expert texture matching",
+      "Quick turnaround times",
+      "Clean, dust-free work process",
+      "Affordable pricing"
+    ],
+    "process": [
+      "Damage assessment",
+      "Preparation and cleaning",
+      "Repair application",
+      "Texture matching",
+      "Prime and paint prep"
+    ],
+    "priceRange": "$150 - $500 per repair",
+    "timeline": "Same day to 2 days",
+    "warranty": "3-year repair warranty"
+  },
+  "drywall-patching": {
+    "name": "Drywall Patching",
+    "slug": "drywall-patching",
+    "shortDescription": "Professional patching services for holes and damaged areas",
+    "longDescription": "Specialized patching services for all types of wall damage. Whether it's from accidents, furniture moves, or wear and tear, we'll patch your walls to look like new.",
+    "benefits": [
+      "Perfect color and texture matching",
+      "Strong, durable patches",
+      "Clean installation process",
+      "Same-day service available",
+      "Competitive pricing"
+    ],
+    "process": [
+      "Area preparation",
+      "Patch selection and fitting",
+      "Compound application",
+      "Sanding and smoothing",
+      "Texture and finish matching"
+    ],
+    "priceRange": "$75 - $300 per patch",
+    "timeline": "2-4 hours per patch",
+    "warranty": "2-year patch warranty"
+  },
+  "drywall-taping": {
+    "name": "Drywall Taping",
+    "slug": "drywall-taping",
+    "shortDescription": "Professional taping and mudding for smooth wall finishes",
+    "longDescription": "Expert taping and mudding services that create perfectly smooth walls ready for painting. Our skilled craftsmen ensure no visible seams or imperfections.",
+    "benefits": [
+      "Smooth, professional finish",
+      "No visible seams or joints",
+      "Multiple coat process",
+      "Expert sanding techniques",
+      "Paint-ready surface"
+    ],
+    "process": [
+      "Tape application to joints",
+      "First coat of mud",
+      "Second coat application",
+      "Final coat and smoothing",
+      "Professional sanding"
+    ],
+    "priceRange": "$1.50 - $2.50 per linear ft",
+    "timeline": "2-4 days for full cure",
+    "warranty": "5-year taping warranty"
+  },
+  "drywall-texturing": {
+    "name": "Drywall Texturing",
+    "slug": "drywall-texturing",
+    "shortDescription": "Custom texturing services to match any wall finish",
+    "longDescription": "Add character and style to your walls with our professional texturing services. We can match any existing texture or create new custom finishes.",
+    "benefits": [
+      "Wide variety of texture options",
+      "Perfect pattern matching",
+      "Covers minor imperfections",
+      "Adds visual interest",
+      "Professional application"
+    ],
+    "process": [
+      "Surface preparation",
+      "Texture selection",
+      "Material mixing",
+      "Professional application",
+      "Final inspection and touch-ups"
+    ],
+    "priceRange": "$1.25 - $3.00 per sq ft",
+    "timeline": "1-2 days plus drying time",
+    "warranty": "3-year texture warranty"
+  },
+  "drywall-restoration": {
+    "name": "Drywall Restoration",
+    "slug": "drywall-restoration",
+    "shortDescription": "Complete restoration services for damaged drywall",
+    "longDescription": "Comprehensive restoration services for severely damaged drywall. Whether from water damage, age, or accidents, we'll restore your walls to their original condition.",
+    "benefits": [
+      "Complete damage assessment",
+      "Mold prevention and treatment",
+      "Structural integrity restoration",
+      "Like-new appearance",
+      "Insurance claim assistance"
+    ],
+    "process": [
+      "Comprehensive damage evaluation",
+      "Removal of damaged materials",
+      "Structural repairs if needed",
+      "New drywall installation",
+      "Finishing and texture matching"
+    ],
+    "priceRange": "$4.00 - $8.00 per sq ft",
+    "timeline": "3-7 days depending on extent",
+    "warranty": "5-year restoration warranty"
+  },
+  "ceiling-services": {
+    "name": "Ceiling Services",
+    "slug": "ceiling-services",
+    "shortDescription": "Complete ceiling installation, repair, and finishing services",
+    "longDescription": "Specialized ceiling services including installation, repair, texturing, and finishing. From simple repairs to complete ceiling renovations.",
+    "benefits": [
+      "Specialized ceiling expertise",
+      "All ceiling types and materials",
+      "Water damage restoration",
+      "Texture and pattern matching",
+      "Structural assessment included"
+    ],
+    "process": [
+      "Ceiling assessment",
+      "Structural evaluation",
+      "Material preparation",
+      "Professional installation/repair",
+      "Finishing and texture application"
+    ],
+    "priceRange": "$3.50 - $6.50 per sq ft",
+    "timeline": "2-5 days depending on scope",
+    "warranty": "5-year ceiling warranty"
+  },
+  "insulation-services": {
+    "name": "Insulation Services",
+    "slug": "insulation-services",
+    "shortDescription": "Professional insulation installation and replacement",
+    "longDescription": "Energy-efficient insulation services to improve your home's comfort and reduce energy costs. We install all types of insulation behind drywall.",
+    "benefits": [
+      "Energy efficiency improvement",
+      "Noise reduction",
+      "Temperature regulation",
+      "Moisture control",
+      "Professional installation"
+    ],
+    "process": [
+      "Energy assessment",
+      "Insulation type selection",
+      "Area preparation",
+      "Professional installation",
+      "Quality inspection"
+    ],
+    "priceRange": "$2.50 - $4.00 per sq ft",
+    "timeline": "1-3 days",
+    "warranty": "10-year insulation warranty"
+  },
+  "water-damage-repair": {
+    "name": "Water Damage Repair",
+    "slug": "water-damage-repair",
+    "shortDescription": "Emergency water damage restoration and drywall repair",
+    "longDescription": "24/7 emergency water damage restoration services. We quickly assess, dry, and repair water-damaged drywall to prevent mold and further damage.",
+    "benefits": [
+      "24/7 emergency response",
+      "Rapid moisture extraction",
+      "Mold prevention",
+      "Insurance claim assistance",
+      "Complete restoration"
+    ],
+    "process": [
+      "Emergency assessment",
+      "Water extraction and drying",
+      "Damage evaluation",
+      "Removal of damaged materials",
+      "Complete restoration and repair"
+    ],
+    "priceRange": "$5.00 - $12.00 per sq ft",
+    "timeline": "3-10 days depending on damage",
+    "warranty": "5-year water damage warranty"
+  },
+  "painting-services": {
+    "name": "Painting Services",
+    "slug": "painting-services",
+    "shortDescription": "Professional interior and exterior painting services",
+    "longDescription": "Complete painting services to finish your drywall project. We provide high-quality interior and exterior painting with premium materials.",
+    "benefits": [
+      "Premium paint materials",
+      "Color consultation",
+      "Proper surface preparation",
+      "Clean, professional finish",
+      "Warranty on all work"
+    ],
+    "process": [
+      "Surface preparation",
+      "Primer application",
+      "Color consultation",
+      "Professional painting",
+      "Final inspection and touch-ups"
+    ],
+    "priceRange": "$3.00 - $6.00 per sq ft",
+    "timeline": "2-5 days depending on scope",
+    "warranty": "3-year paint warranty"
+  }
+}
