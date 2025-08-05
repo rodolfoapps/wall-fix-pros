@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { DocumentTextIcon, WrenchScrewdriverIcon, ClockIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+import { DocumentTextIcon, WrenchScrewdriverIcon, ClockIcon, ShieldCheckIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   title: 'Drywall Repair Resources & Tips | Wall Fix Pros',
@@ -12,6 +13,7 @@ export default function ResourcesPage() {
       title: 'Drywall Repair Guide',
       description: 'Complete guide to common drywall problems and solutions.',
       icon: DocumentTextIcon,
+      href: '/resources/drywall-repair-guide',
       items: [
         'Identifying different types of drywall damage',
         'Tools needed for basic repairs',
@@ -23,6 +25,7 @@ export default function ResourcesPage() {
       title: 'Maintenance Tips',
       description: 'Keep your drywall in perfect condition with these tips.',
       icon: WrenchScrewdriverIcon,
+      href: '/resources/maintenance-tips',
       items: [
         'Regular inspection checklist',
         'Preventing water damage',
@@ -34,6 +37,7 @@ export default function ResourcesPage() {
       title: 'Emergency Response',
       description: 'What to do when drywall damage occurs unexpectedly.',
       icon: ClockIcon,
+      href: '/resources/emergency-response',
       items: [
         'Water damage first aid',
         'Preventing further damage',
@@ -45,6 +49,7 @@ export default function ResourcesPage() {
       title: 'Quality Standards',
       description: 'Understanding professional drywall repair standards.',
       icon: ShieldCheckIcon,
+      href: '/resources/quality-standards',
       items: [
         'Industry best practices',
         'Material quality standards',
@@ -103,23 +108,34 @@ export default function ResourcesPage() {
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
           {resources.map((resource) => (
-            <div key={resource.title} className="rounded-lg border border-gray-200 p-8">
-              <div className="flex items-center">
-                <resource.icon className="h-8 w-8 text-brand-orange-500" />
-                <h3 className="ml-3 text-xl font-bold text-brand-blue-700">
-                  {resource.title}
-                </h3>
+            <Link
+              key={resource.title}
+              href={resource.href}
+              className="group rounded-lg border border-gray-200 p-8 hover:shadow-lg hover:border-blue-300 transition-all duration-200"
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <resource.icon className="h-8 w-8 text-brand-orange-500 group-hover:text-brand-orange-600 transition-colors duration-200" />
+                  <h3 className="ml-3 text-xl font-bold text-brand-blue-700 group-hover:text-brand-blue-800 transition-colors duration-200">
+                    {resource.title}
+                  </h3>
+                </div>
+                <ChevronRightIcon className="h-5 w-5 text-gray-400 group-hover:text-blue-600 transition-colors duration-200" />
               </div>
-              <p className="mt-4 text-gray-600">{resource.description}</p>
+              <p className="mt-4 text-gray-600 group-hover:text-gray-700 transition-colors duration-200">{resource.description}</p>
               <ul className="mt-6 space-y-2">
                 {resource.items.map((item) => (
                   <li key={item} className="flex items-start">
-                    <div className="h-2 w-2 rounded-full bg-brand-orange-500 mt-2 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
+                    <div className="h-2 w-2 rounded-full bg-brand-orange-500 mt-2 mr-3 flex-shrink-0 group-hover:bg-brand-orange-600 transition-colors duration-200" />
+                    <span className="text-gray-700 group-hover:text-gray-800 transition-colors duration-200">{item}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+              <div className="mt-6 flex items-center text-blue-600 group-hover:text-blue-700 font-medium text-sm transition-colors duration-200">
+                Read Full Guide
+                <ChevronRightIcon className="h-4 w-4 ml-1" />
+              </div>
+            </Link>
           ))}
         </div>
       </div>
