@@ -1,13 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   trailingSlash: true,
   images: {
     unoptimized: true
   },
   async redirects() {
     return [
-      // Add any necessary redirects here
+      {
+        source: '/drywall-repair',
+        destination: '/services/drywall-repair',
+        permanent: true
+      },
+      {
+        source: '/drywall-installation', 
+        destination: '/services/drywall-installation',
+        permanent: true
+      }
     ]
   },
 }
