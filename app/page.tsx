@@ -79,9 +79,9 @@ export default function HomePage() {
   return (
     <div className="bg-white">
       {/* Hero section */}
-      <div className="relative isolate px-6 pt-14 lg:px-8">
-        <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-          <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-brand-orange-400 to-brand-blue-600 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" />
+      <div className="relative isolate px-6 pt-20 lg:px-8">
+        <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 pointer-events-none">
+          <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-orange-400 to-blue-600 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" />
         </div>
         
         <div className="mx-auto max-w-4xl py-24 sm:py-32 lg:py-40">
@@ -95,13 +95,13 @@ export default function HomePage() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
                 href="/quote"
-                className="rounded-md bg-brand-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-brand-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange-500"
+                className="rounded-md bg-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
               >
                 Get Free Quote
               </Link>
               <a 
                 href="tel:+13015550199" 
-                className="text-lg font-semibold leading-6 text-gray-900 hover:text-brand-blue-600"
+                className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600"
               >
                 Call Now: (301) 555-0199 <span aria-hidden="true">→</span>
               </a>
@@ -114,9 +114,9 @@ export default function HomePage() {
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat) => (
-                <div key={stat.name} className="flex flex-col bg-brand-blue-50 p-8">
+                <div key={stat.name} className="flex flex-col bg-blue-50 p-8">
                   <dt className="text-sm font-semibold leading-6 text-gray-600">{stat.name}</dt>
-                  <dd className="order-first text-3xl font-bold tracking-tight text-brand-blue-700">
+                  <dd className="order-first text-3xl font-bold tracking-tight text-blue-700">
                     {stat.value}
                   </dd>
                   <dd className="text-sm text-gray-500">{stat.description}</dd>
@@ -144,10 +144,10 @@ export default function HomePage() {
               {services.map((service) => (
                 <div key={service.name} className="flex flex-col">
                   <dt className="text-base font-semibold leading-7 text-gray-900">
-                    <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-brand-orange-500 text-2xl">
+                    <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-orange-500 text-2xl">
                       {service.icon}
                     </div>
-                    <Link href={service.href} className="hover:text-brand-blue-600">
+                    <Link href={service.href} className="hover:text-blue-600">
                       {service.name}
                     </Link>
                   </dt>
