@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { PhoneIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -14,17 +14,38 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      setIsScrolled(scrollTop > 10)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="bg-white shadow-lg relative z-50">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+      isScrolled 
+        ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
+        : 'bg-white shadow-lg'
+    }`}>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="flex w-full items-center justify-between border-b border-blue-500 py-6 lg:border-none">
+        <div className={`flex w-full items-center justify-between transition-all duration-300 ease-in-out lg:border-none ${
+          isScrolled 
+            ? 'py-3 border-b-0' 
+            : 'py-6 border-b border-blue-500'
+        }`}>
           <div className="flex items-center">
             <Link 
               href="/" 
               className="cursor-pointer hover:opacity-80 transition-opacity"
             >
-              <span className="text-2xl font-bold text-blue-700 select-none">
+              <span className={`font-bold text-blue-700 select-none transition-all duration-300 ease-in-out ${
+                isScrolled ? 'text-xl' : 'text-2xl'
+              }`}>
                 Wall Fix Pros
               </span>
             </Link>
