@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { DocumentTextIcon, WrenchScrewdriverIcon, ClockIcon, ShieldCheckIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import { DocumentTextIcon, WrenchScrewdriverIcon, ClockIcon, ShieldCheckIcon, ChevronRightIcon, BookOpenIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   title: 'Drywall Repair Resources & Tips | Wall Fix Pros',
@@ -104,6 +104,28 @@ export default function ResourcesPage() {
           <p className="mt-4 text-lg text-gray-600">
             Everything you need to know about drywall repair and maintenance.
           </p>
+        </div>
+
+        {/* Featured Blog Articles */}
+        <div className="mt-12 bg-blue-50 rounded-lg p-8">
+          <div className="text-center">
+            <BookOpenIcon className="mx-auto h-12 w-12 text-blue-600" />
+            <h2 className="mt-4 text-2xl font-bold tracking-tight text-blue-900">
+              Expert Blog Articles
+            </h2>
+            <p className="mt-2 text-blue-700">
+              In-depth guides and professional insights from our drywall experts
+            </p>
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/blog"
+              className="inline-flex items-center rounded-md bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-700 transition-colors duration-200"
+            >
+              View All Blog Articles
+              <ChevronRightIcon className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
         </div>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
