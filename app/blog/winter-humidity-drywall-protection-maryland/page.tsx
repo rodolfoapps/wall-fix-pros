@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CalendarIcon, ClockIcon, UserIcon, ThermometerIcon, ExclamationTriangleIcon, CheckCircleIcon, CloudIcon } from '@heroicons/react/24/outline'
+import { CalendarIcon, ClockIcon, UserIcon, ExclamationTriangleIcon, CheckCircleIcon, CloudIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   title: 'Winter Humidity and Your Drywall: Protecting Your Maryland Home',
@@ -259,7 +259,7 @@ export default function WinterHumidityDrywallPage() {
 
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-8">
             <div className="flex items-start">
-              <ThermometerIcon className="h-6 w-6 text-yellow-600 mt-1 mr-3 flex-shrink-0" />
+              <ExclamationTriangleIcon className="h-6 w-6 text-yellow-600 mt-1 mr-3 flex-shrink-0" />
               <div>
                 <h3 className="text-lg font-semibold text-yellow-800 mb-2">Maryland Winter Climate Factors</h3>
                 <div className="grid md:grid-cols-2 gap-4 text-yellow-700">
@@ -572,7 +572,7 @@ export default function WinterHumidityDrywallPage() {
                 <div className="text-blue-200 text-sm font-medium">Humidity Assessment</div>
               </div>
               <div className="text-center">
-                <ThermometerIcon className="h-8 w-8 text-blue-200 mx-auto mb-2" />
+                <ExclamationTriangleIcon className="h-8 w-8 text-blue-200 mx-auto mb-2" />
                 <div className="text-blue-200 text-sm font-medium">Climate Control Review</div>
               </div>
               <div className="text-center">
