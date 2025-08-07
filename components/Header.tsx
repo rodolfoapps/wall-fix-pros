@@ -69,10 +69,10 @@ export default function Header() {
             <div className="flex items-center">
               <PhoneIcon className="h-5 w-5 text-orange-500" />
               <a 
-                href="tel:+13015550199" 
+                href="tel:+12406701949" 
                 className="ml-2 text-base font-medium text-gray-900 hover:text-blue-600 cursor-pointer transition-colors duration-200"
               >
-                (301) 555-0199
+                (240) 670-1949
               </a>
             </div>
             <Link
@@ -102,10 +102,10 @@ export default function Header() {
             <div className="flex items-center">
               <PhoneIcon className="h-5 w-5 text-orange-500" />
               <a 
-                href="tel:+13015550199" 
+                href="tel:+12406701949" 
                 className="ml-2 text-sm font-medium text-gray-900 cursor-pointer hover:text-blue-600 transition-colors duration-200"
               >
-                (301) 555-0199
+                (240) 670-1949
               </a>
             </div>
             <Link

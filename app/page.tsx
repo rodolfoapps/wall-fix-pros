@@ -100,10 +100,10 @@ export default function HomePage() {
                 Get Free Quote
               </Link>
               <a 
-                href="tel:+13015550199" 
+                href="tel:+12406701949" 
                 className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600"
               >
-                Call Now: (301) 555-0199 <span aria-hidden="true">→</span>
+                Call Now: (240) 670-1949 <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -271,10 +271,10 @@ export default function HomePage() {
                 Get Free Quote
               </Link>
               <a
-                href="tel:+13015550199"
+                href="tel:+12406701949"
                 className="text-lg font-semibold leading-6 text-white hover:text-blue-100"
               >
-                Call: (301) 555-0199 <span aria-hidden="true">→</span>
+                Call: (240) 670-1949 <span aria-hidden="true">→</span>
               </a>
             </div>
             

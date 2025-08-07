@@ -457,10 +457,10 @@ export default function QualityStandardsPage() {
                 Get Quality Quote
               </Link>
               <a
-                href="tel:+13015550199"
+                href="tel:+12406701949"
                 className="text-lg font-semibold leading-6 text-white hover:text-green-100"
               >
-                Call (301) 555-0199
+                Call (240) 670-1949
               </a>
             </div>
             <div className="mt-6">

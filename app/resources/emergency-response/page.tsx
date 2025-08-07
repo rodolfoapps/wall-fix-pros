@@ -190,11 +190,11 @@ export default function EmergencyResponsePage() {
               24/7 EMERGENCY SERVICE
             </div>
             <a
-              href="tel:+13015550199"
+              href="tel:+12406701949"
               className="text-red-100 hover:text-white font-medium flex items-center"
             >
               <PhoneIcon className="h-5 w-5 mr-2" />
-              (301) 555-0199
+              (240) 670-1949
             </a>
           </div>
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -397,11 +397,11 @@ export default function EmergencyResponsePage() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="tel:+13015550199"
+                href="tel:+12406701949"
                 className="rounded-md bg-white px-8 py-4 text-lg font-bold text-red-600 shadow-sm hover:bg-gray-50 flex items-center animate-pulse"
               >
                 <PhoneIcon className="h-6 w-6 mr-3" />
-                EMERGENCY: (301) 555-0199
+                EMERGENCY: (240) 670-1949
               </a>
               <Link
                 href="/quote"

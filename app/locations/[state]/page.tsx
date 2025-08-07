@@ -147,11 +147,11 @@ export default function StatePage({ params }: Props) {
                 Get Free Quote
               </Link>
               <a
-                href="tel:+13015550199"
+                href="tel:+12406701949"
                 className="flex items-center text-lg font-semibold leading-6 text-white hover:text-blue-100"
               >
                 <PhoneIcon className="h-5 w-5 mr-2" />
-                Call: (301) 555-0199
+                Call: (240) 670-1949
               </a>
             </div>
           </div>

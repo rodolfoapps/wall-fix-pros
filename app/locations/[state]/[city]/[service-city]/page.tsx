@@ -216,10 +216,10 @@ export default function LocationServicePage({ params }: Props) {
                   Get Free Quote Today
                 </Link>
                 <a
-                  href="tel:+13015550199"
+                  href="tel:+12406701949"
                   className="w-full bg-white text-orange-600 border-2 border-orange-300 px-4 py-3 rounded-md hover:bg-orange-50 inline-block text-center font-medium"
                 >
-                  Call (301) 555-0199
+                  Call (240) 670-1949
                 </a>
               </div>
             </div>
@@ -301,11 +301,11 @@ export default function LocationServicePage({ params }: Props) {
                 Get Free Quote
               </Link>
               <a
-                href="tel:+13015550199"
+                href="tel:+12406701949"
                 className="flex items-center text-lg font-semibold leading-6 text-white hover:text-blue-100"
               >
                 <PhoneIcon className="h-5 w-5 mr-2" />
-                Call: (301) 555-0199
+                Call: (240) 670-1949
               </a>
             </div>
           </div>

@@ -558,10 +558,10 @@ export default function FixDrywallProblemsPage() {
                   Get Free Estimate
                 </Link>
                 <a
-                  href="tel:+13015550199"
+                  href="tel:+12406701949"
                   className="border-2 border-blue-300 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-200"
                 >
-                  Call (301) 555-0199
+                  Call (240) 670-1949
                 </a>
               </div>
             </div>

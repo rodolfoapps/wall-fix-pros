@@ -52,7 +52,7 @@ export default function BlogPage() {
       slug: 'northern-virginia-ceiling-repairs-trust',
       excerpt: 'Discover why Northern Virginia homeowners choose Wall Fix Pros for ceiling repairs. Customer testimonials and expert ceiling solutions.',
       category: 'Ceiling Repair',
-      readTime: '11 min read',
+      readTime: '15 min read',
       publishDate: 'December 5, 2024'
     },
     {
@@ -264,10 +264,10 @@ export default function BlogPage() {
                     Get Free Quote
                   </Link>
                   <a
-                    href="tel:+13015550199"
+                    href="tel:+12406701949"
                     className="block w-full border border-blue-300 text-center py-2 px-4 rounded-md font-medium hover:bg-blue-600 transition-colors duration-200"
                   >
-                    Call (301) 555-0199
+                    Call (240) 670-1949
                   </a>
                 </div>
               </div>
