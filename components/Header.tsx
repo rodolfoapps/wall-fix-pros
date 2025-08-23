@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { PhoneIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
@@ -41,13 +42,20 @@ export default function Header() {
           <div className="flex items-center">
             <Link 
               href="/" 
-              className="cursor-pointer hover:opacity-80 transition-opacity"
+              className="cursor-pointer hover:opacity-90 transition-opacity flex items-center"
             >
-              <span className={`font-bold text-blue-700 select-none transition-all duration-300 ease-in-out ${
-                isScrolled ? 'text-xl' : 'text-2xl'
+              <div className={`transition-all duration-300 ease-in-out ${
+                isScrolled ? 'h-10 w-auto' : 'h-12 w-auto'
               }`}>
-                Wall Fix Pros
-              </span>
+                <Image
+                  src="/images/Assets/Logo-WALL-FIX-PRO.webp"
+                  alt="Wall Fix Pros - Professional Drywall and Wall Repair Services"
+                  width={isScrolled ? 160 : 180}
+                  height={isScrolled ? 40 : 48}
+                  priority
+                  className="h-full w-auto"
+                />
+              </div>
             </Link>
           </div>
           
@@ -126,12 +134,17 @@ export default function Header() {
             <div className="flex items-center justify-between">
               <Link 
                 href="/" 
-                className="-m-1.5 p-1.5 cursor-pointer hover:opacity-80 transition-opacity"
+                className="-m-1.5 p-1.5 cursor-pointer hover:opacity-90 transition-opacity"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <span className="text-xl font-bold text-blue-700 select-none">
-                  Wall Fix Pros
-                </span>
+                <Image
+                  src="/images/Assets/Logo-WALL-FIX-PRO.webp"
+                  alt="Wall Fix Pros - Professional Drywall and Wall Repair Services"
+                  width={140}
+                  height={35}
+                  priority
+                  className="h-8 w-auto"
+                />
               </Link>
               <button
                 type="button"

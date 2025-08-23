@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { PhoneIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline'
 import businessInfo from '@/data/business-info.json'
 
@@ -29,8 +30,16 @@ export default function Footer() {
           {/* Company info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-white">Wall Fix Pros</h3>
-              <p className="mt-2 text-sm leading-6 text-gray-300">
+              <Link href="/" className="inline-block">
+                <Image
+                  src="/images/Assets/Logo-WALL-FIX-PRO.webp"
+                  alt="Wall Fix Pros - Professional Drywall and Wall Repair Services"
+                  width={200}
+                  height={50}
+                  className="h-12 w-auto"
+                />
+              </Link>
+              <p className="mt-4 text-sm leading-6 text-gray-300">
                 Professional drywall and wall repair services serving Maryland, Virginia, West Virginia, and Pennsylvania.
               </p>
             </div>

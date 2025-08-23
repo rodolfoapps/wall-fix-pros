@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { CheckIcon, MapPinIcon, ClockIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 
@@ -79,17 +80,26 @@ export default function HomePage() {
   return (
     <div className="bg-white">
       {/* Hero section */}
-      <div className="relative isolate px-6 pt-8 lg:px-8">
-        <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 pointer-events-none">
-          <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-orange-400 to-blue-600 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" />
+      <div className="relative isolate">
+        {/* Hero Image */}
+        <div className="relative h-[600px] sm:h-[700px] lg:h-[800px]">
+          <Image
+            src="/images/hero/Hero - Fix Wall Pro.png"
+            alt="Professional drywall and wall repair services by Wall Fix Pros"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         </div>
         
-        <div className="mx-auto max-w-4xl py-24 sm:py-32 lg:py-40">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        {/* Hero Content */}
+        <div className="absolute inset-0 flex items-center justify-center px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl drop-shadow-lg">
               Professional Drywall & Wall Repair Services
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-white/90 drop-shadow-md">
               Expert drywall installation, repair, and wall services serving <strong>Maryland</strong>, <strong>Virginia</strong>, <strong>West Virginia</strong>, and <strong>Pennsylvania</strong>. Licensed, insured, and trusted since 2015.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
