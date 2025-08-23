@@ -82,7 +82,7 @@ export default function HomePage() {
       {/* Hero section */}
       <div className="relative isolate">
         {/* Hero Image */}
-        <div className="relative h-[600px] sm:h-[700px] lg:h-[800px]">
+        <div className="relative h-[400px] sm:h-[500px] lg:h-[600px]">
           <Image
             src="/images/hero/Hero - Fix Wall Pro.png"
             alt="Professional drywall and wall repair services by Wall Fix Pros"
