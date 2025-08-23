@@ -50,8 +50,8 @@ export default function Header() {
                 <Image
                   src="/images/Assets/Logo-WALL-FIX-PRO.webp"
                   alt="Wall Fix Pros - Professional Drywall and Wall Repair Services"
-                  width={isScrolled ? 160 : 180}
-                  height={isScrolled ? 40 : 48}
+                  width={isScrolled ? 160 : 200}
+                  height={isScrolled ? 40 : 50}
                   priority
                   className="h-full w-auto"
                 />
