@@ -94,7 +94,7 @@ export default function HomePage() {
         </div>
         
         {/* Hero Content */}
-        <div className="absolute inset-0 flex items-center justify-center px-6 lg:px-8">
+        <div className="absolute inset-0 flex items-start justify-center px-6 pt-24 sm:pt-32 lg:px-8 lg:pt-40">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl drop-shadow-lg">
               Professional Drywall & Wall Repair Services
