@@ -99,10 +99,10 @@ export default function HomePage() {
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl drop-shadow-lg">
               Professional Drywall & Wall Repair Services
             </h1>
-            <p className="mt-6 text-lg leading-8 text-white/90 drop-shadow-md">
+            <p className="mt-3 text-lg leading-8 text-white/90 drop-shadow-md">
               Expert drywall installation, repair, and wall services serving <strong>Maryland</strong>, <strong>Virginia</strong>, <strong>West Virginia</strong>, and <strong>Pennsylvania</strong>. Licensed, insured, and trusted since 2015.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-6 flex items-center justify-center gap-x-6">
               <Link
                 href="/quote"
                 className="rounded-md bg-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
@@ -111,7 +111,7 @@ export default function HomePage() {
               </Link>
               <a 
                 href="tel:+12406701949" 
-                className="text-lg font-semibold leading-6 text-gray-900 hover:text-blue-600"
+                className="text-lg font-semibold leading-6 text-white hover:text-orange-300 drop-shadow-md"
               >
                 Call Now: (240) 670-1949 <span aria-hidden="true">→</span>
               </a>
