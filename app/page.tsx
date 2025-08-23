@@ -19,37 +19,37 @@ const services = [
     name: 'Drywall Installation',
     description: 'Professional installation for new construction and renovations',
     href: '/services/drywall-installation',
-    icon: '🔨'
+    image: '/images/services/Drywall-Installation-300x210.webp'
   },
   {
     name: 'Drywall Repair', 
     description: 'Expert repair services for holes, cracks, and damage',
     href: '/services/drywall-repair',
-    icon: '🔧'
+    image: '/images/services/Drywall-Repair-300x210.webp'
   },
   {
     name: 'Water Damage Repair',
     description: '24/7 emergency water damage restoration services',
     href: '/services/water-damage-repair', 
-    icon: '💧'
+    image: '/images/services/Water-Damage-300x210.webp'
   },
   {
     name: 'Ceiling Services',
     description: 'Complete ceiling installation, repair, and finishing',
     href: '/services/ceiling-services',
-    icon: '🏠'
+    image: '/images/services/Drywall-Celling-300x210.webp'
   },
   {
     name: 'Drywall Texturing',
     description: 'Custom texturing to match any wall finish',
     href: '/services/drywall-texturing',
-    icon: '🎨'
+    image: '/images/services/Drywall-Texturing-300x210.webp'
   },
   {
     name: 'Painting Services',
     description: 'Professional interior and exterior painting',
     href: '/services/painting-services',
-    icon: '🖌️'
+    image: '/images/services/Draywall-Painting-300x210.webp'
   }
 ]
 
@@ -152,10 +152,15 @@ export default function HomePage() {
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
               {services.map((service) => (
-                <div key={service.name} className="flex flex-col">
+                <div key={service.name} className="flex flex-col group">
                   <dt className="text-base font-semibold leading-7 text-gray-900">
-                    <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-orange-500 text-2xl">
-                      {service.icon}
+                    <div className="mb-6 relative h-48 w-full overflow-hidden rounded-lg">
+                      <Image
+                        src={service.image}
+                        alt={`${service.name} services by Wall Fix Pros`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
                     <Link href={service.href} className="hover:text-blue-600">
                       {service.name}
