@@ -87,8 +87,40 @@ export default function ContactForm() {
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900">Contact Information</h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Get in touch with our team for professional drywall services across the DMV area.
+                Get in touch with our team for professional drywall services across Maryland, Virginia, West Virginia, and Pennsylvania. Whether you need emergency repairs, complete installations, or texture matching, our experts are ready to help with your project.
               </p>
+              
+              <div className="mt-8 bg-blue-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-blue-900 mb-3">Why Choose Wall Fix Pros?</h3>
+                <ul className="text-blue-800 text-sm space-y-2">
+                  <li>• <strong>Licensed & Insured:</strong> Fully licensed contractors in all service states</li>
+                  <li>• <strong>Free Estimates:</strong> No obligation quotes for all project sizes</li>
+                  <li>• <strong>Fast Response:</strong> Same-day estimates and emergency services available</li>
+                  <li>• <strong>Quality Guarantee:</strong> 5-year warranty on all installation work</li>
+                  <li>• <strong>Local Expertise:</strong> Frederick headquarters serving 33 cities across 4 states</li>
+                </ul>
+              </div>
+
+              <div className="mt-8 bg-gray-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Service Areas</h3>
+                <p className="text-gray-700 text-sm mb-3">
+                  We proudly serve residential and commercial customers throughout the greater DMV region:
+                </p>
+                <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+                  <div>
+                    <strong className="text-gray-800">Maryland:</strong> Frederick, Baltimore, Rockville, Bethesda, Gaithersburg, and 12 more cities
+                  </div>
+                  <div>
+                    <strong className="text-gray-800">Virginia:</strong> Leesburg, Sterling, Fairfax, McLean, Alexandria, and 6 more cities
+                  </div>
+                  <div>
+                    <strong className="text-gray-800">West Virginia:</strong> Harpers Ferry, Charles Town
+                  </div>
+                  <div>
+                    <strong className="text-gray-800">Pennsylvania:</strong> Gettysburg, Chambersburg, Green Castle
+                  </div>
+                </div>
+              </div>
               <dl className="mt-10 space-y-4 text-base leading-7 text-gray-600">
                 <div className="flex gap-x-4">
                   <dt className="flex-none">
