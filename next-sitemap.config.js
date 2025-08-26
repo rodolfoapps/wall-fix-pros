@@ -21,7 +21,6 @@ module.exports = {
         disallow: [
           '/api/',
           '/admin/',
-          '/_next/',
           '/404'
         ]
       }
