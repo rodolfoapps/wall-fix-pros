@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${service.name} ${city.name}, ${city.stateAbbrev}${city.isHeadquarters ? ' - Headquarters' : ''}`,
+    title: `${service.name} Services ${city.name}, ${city.stateAbbrev}${city.isHeadquarters ? ' - Headquarters' : ''}`,
     description: `Professional ${service.name.toLowerCase()} services in ${city.name}, ${city.stateAbbrev}. ${service.shortDescription} ${city.isHeadquarters ? 'Headquarters location with fastest response times and comprehensive warranty coverage.' : 'Expert local service with same-day availability and guaranteed quality.'}`,
   }
 }

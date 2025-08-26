@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `Drywall Repair ${city.name}, ${state.abbreviation}${city.isHeadquarters ? ' - Headquarters' : ''}`,
+    title: `Drywall Services ${city.name}, ${state.abbreviation}${city.isHeadquarters ? ' - Headquarters' : ''}`,
     description: `Professional drywall repair and installation services in ${city.name}, ${state.abbreviation}. ${city.isHeadquarters ? 'Our headquarters location with' : 'Offering'} fast response times, expert craftsmanship, and comprehensive drywall solutions for residential and commercial projects.`,
   }
 }

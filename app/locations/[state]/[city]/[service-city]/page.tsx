@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${service.name} ${city.name}, ${state.abbreviation}${city.isHeadquarters ? ' - Headquarters' : ''}`,
+    title: `${service.name} in ${city.name}, ${state.abbreviation}${city.isHeadquarters ? ' - Headquarters' : ''}`,
     description: `Professional ${service.name.toLowerCase()} services in ${city.name}, ${state.abbreviation}. ${service.shortDescription} ${city.isHeadquarters ? 'Headquarters location with fastest response times and comprehensive warranty coverage.' : 'Expert local service with same-day availability and guaranteed quality.'}`,
   }
 }

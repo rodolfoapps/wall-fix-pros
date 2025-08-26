@@ -2,6 +2,12 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Free Quote Request | Professional Drywall Services',
+  description: 'Request your free drywall service quote online. Professional installation, repair, and restoration services across Maryland, Virginia, West Virginia, and Pennsylvania. Fast response guaranteed.',
+}
 
 export default function QuotePage() {
   const router = useRouter()

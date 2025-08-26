@@ -4,6 +4,12 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { PhoneIcon, EnvelopeIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Contact Us | Get Your Free Drywall Estimate',
+  description: 'Contact Wall Fix Pros for your drywall project. Get a free estimate, schedule service, or ask questions. Serving Maryland, Virginia, West Virginia, and Pennsylvania with 24/7 emergency service.',
+}
 
 export default function ContactPage() {
   const router = useRouter()
