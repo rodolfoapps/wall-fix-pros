@@ -1,10 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend with a fallback to prevent build errors
+const resend = new Resend(process.env.RESEND_API_KEY || 'fallback_key_for_build')
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if API key is properly configured
+    if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 'fallback_key_for_build') {
+      return NextResponse.json(
+        { 
+          success: false, 
+          message: 'Email service is not configured. Please contact us directly at (301) 555-0199.' 
+        },
+        { status: 503 }
+      )
+    }
+
     const formData = await request.json()
     const {
       firstName,
