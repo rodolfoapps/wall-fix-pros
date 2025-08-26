@@ -270,6 +270,186 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* Our Process section */}
+      <div className="bg-gray-50 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Our Professional Process
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              From initial consultation to final cleanup, we follow a proven process that ensures quality results every time.
+            </p>
+          </div>
+          
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+            <div className="grid max-w-xl grid-cols-1 gap-y-16 lg:max-w-none lg:grid-cols-4">
+              <div className="flex flex-col">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-orange-500 text-white font-bold text-xl">
+                  1
+                </div>
+                <h3 className="text-lg font-semibold leading-8 text-gray-900">
+                  Free Assessment
+                </h3>
+                <p className="mt-2 text-base leading-7 text-gray-600">
+                  We evaluate your project, assess damage or requirements, and provide detailed recommendations. Our experienced team identifies potential issues and explains all repair options clearly.
+                </p>
+              </div>
+              
+              <div className="flex flex-col">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-orange-500 text-white font-bold text-xl">
+                  2
+                </div>
+                <h3 className="text-lg font-semibold leading-8 text-gray-900">
+                  Detailed Quote
+                </h3>
+                <p className="mt-2 text-base leading-7 text-gray-600">
+                  Receive a comprehensive written estimate with material costs, labor details, and project timeline. No hidden fees or surprise charges - transparent pricing you can trust.
+                </p>
+              </div>
+              
+              <div className="flex flex-col">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-orange-500 text-white font-bold text-xl">
+                  3
+                </div>
+                <h3 className="text-lg font-semibold leading-8 text-gray-900">
+                  Professional Work
+                </h3>
+                <p className="mt-2 text-base leading-7 text-gray-600">
+                  Our licensed craftsmen complete your project using premium materials and industry-best practices. We protect your property and maintain clean work areas throughout the process.
+                </p>
+              </div>
+              
+              <div className="flex flex-col">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-orange-500 text-white font-bold text-xl">
+                  4
+                </div>
+                <h3 className="text-lg font-semibold leading-8 text-gray-900">
+                  Quality Inspection
+                </h3>
+                <p className="mt-2 text-base leading-7 text-gray-600">
+                  Final walkthrough ensures every detail meets our high standards and your complete satisfaction. We provide warranty documentation and maintenance recommendations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ section */}
+      <div className="py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              Get answers to common questions about our drywall and wall repair services across Maryland, Virginia, West Virginia, and Pennsylvania.
+            </p>
+          </div>
+          
+          <div className="mx-auto mt-16 max-w-4xl">
+            <div className="space-y-8">
+              <div className="border-b border-gray-200 pb-8">
+                <h3 className="text-lg font-semibold leading-7 text-gray-900">
+                  How quickly can you start my drywall project?
+                </h3>
+                <p className="mt-3 text-base leading-7 text-gray-600">
+                  We typically schedule new projects within 2-3 business days of approval. Emergency repairs are available same-day or next-day in most service areas. Our Frederick headquarters allows us to respond quickly throughout Maryland, Virginia, West Virginia, and Pennsylvania.
+                </p>
+              </div>
+              
+              <div className="border-b border-gray-200 pb-8">
+                <h3 className="text-lg font-semibold leading-7 text-gray-900">
+                  What's included in your warranty coverage?
+                </h3>
+                <p className="mt-3 text-base leading-7 text-gray-600">
+                  All drywall installations include a 5-year warranty on workmanship and materials. Repairs are covered for 3 years. Our warranty covers defects in installation, joint integrity, and finish quality. We stand behind our work with comprehensive protection and responsive service.
+                </p>
+              </div>
+              
+              <div className="border-b border-gray-200 pb-8">
+                <h3 className="text-lg font-semibold leading-7 text-gray-900">
+                  Do you handle water damage restoration?
+                </h3>
+                <p className="mt-3 text-base leading-7 text-gray-600">
+                  Yes, we specialize in water damage drywall restoration with 24/7 emergency response. Our team assesses moisture levels, removes damaged materials, and restores affected areas. We work directly with insurance companies and provide detailed documentation for claims.
+                </p>
+              </div>
+              
+              <div className="border-b border-gray-200 pb-8">
+                <h3 className="text-lg font-semibold leading-7 text-gray-900">
+                  Can you match existing wall textures?
+                </h3>
+                <p className="mt-3 text-base leading-7 text-gray-600">
+                  Absolutely. Our experienced craftsmen are skilled at matching various texture patterns including orange peel, knockdown, skip trowel, and custom finishes. We test texture samples to ensure perfect matches before proceeding with repairs or installations.
+                </p>
+              </div>
+              
+              <div className="border-b border-gray-200 pb-8">
+                <h3 className="text-lg font-semibold leading-7 text-gray-900">
+                  What areas do you serve in Maryland, Virginia, West Virginia, and Pennsylvania?
+                </h3>
+                <p className="mt-3 text-base leading-7 text-gray-600">
+                  We serve 33 cities across four states from our Frederick, Maryland headquarters. This includes major areas like Baltimore, Rockville, Arlington, Leesburg, Harpers Ferry, and Gettysburg. Our service area covers residential and commercial properties within a 75-mile radius of Frederick.
+                </p>
+              </div>
+              
+              <div className="pb-8">
+                <h3 className="text-lg font-semibold leading-7 text-gray-900">
+                  Are your technicians licensed and insured?
+                </h3>
+                <p className="mt-3 text-base leading-7 text-gray-600">
+                  All our technicians are fully licensed contractors in Maryland, Virginia, West Virginia, and Pennsylvania. We carry comprehensive general liability insurance and worker's compensation coverage. Our MHIC license and insurance certificates are available upon request.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Local expertise section */}
+      <div className="bg-blue-50 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Local DMV Area Expertise
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              Understanding local building codes, climate considerations, and architectural styles across our service region.
+            </p>
+          </div>
+          
+          <div className="mx-auto mt-16 max-w-5xl">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+              <div>
+                <h3 className="text-xl font-semibold leading-8 text-gray-900 mb-4">
+                  Regional Climate Considerations
+                </h3>
+                <p className="text-base leading-7 text-gray-600 mb-4">
+                  The DMV area's humid subtropical climate presents unique challenges for drywall installation and repair. High humidity levels, temperature fluctuations, and seasonal weather patterns require specialized techniques and materials. Our team understands how to select appropriate moisture-resistant products and installation methods.
+                </p>
+                <p className="text-base leading-7 text-gray-600">
+                  We account for building expansion and contraction cycles, proper ventilation requirements, and humidity control measures to ensure long-lasting results in Maryland's variable climate conditions.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-semibold leading-8 text-gray-900 mb-4">
+                  Building Code Compliance
+                </h3>
+                <p className="text-base leading-7 text-gray-600 mb-4">
+                  Each state and locality in our service area has specific building codes and requirements. Our licensed contractors stay current with Maryland, Virginia, West Virginia, and Pennsylvania building codes, ensuring all work meets or exceeds regulatory standards.
+                </p>
+                <p className="text-base leading-7 text-gray-600">
+                  From fire ratings to accessibility requirements, we handle permit applications, inspections, and code compliance documentation. Historic districts receive special attention to preserve architectural authenticity while meeting modern safety standards.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* CTA section */}
       <div className="bg-brand-blue-600">
         <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
@@ -278,7 +458,7 @@ export default function HomePage() {
               Ready to fix your walls?
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-              Get a free estimate today! Our team is ready to help with all your drywall and wall repair needs.
+              Get a free estimate today! Our team is ready to help with all your drywall and wall repair needs across Maryland, Virginia, West Virginia, and Pennsylvania.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
