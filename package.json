@@ -9,7 +9,8 @@
     "lint": "next lint",
     "generate-pages": "node scripts/generate-pages.js",
     "update-sitemap": "next-sitemap",
-    "validate-data": "node scripts/validate-data.js"
+    "validate-data": "node scripts/validate-data.js",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.19",

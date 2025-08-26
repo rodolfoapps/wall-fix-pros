@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import servicesData from '@/data/services.json'
 
 export const metadata: Metadata = {
-  title: 'Professional Drywall Services | Wall Fix Pros MD, VA, WV, PA',
+  title: 'Professional Drywall Services | MD, VA, WV, PA',
   description: 'Complete drywall and wall repair services including installation, repair, patching, taping, texturing, ceiling work, water damage restoration, and painting. Serving Maryland, Virginia, West Virginia, and Pennsylvania.',
   keywords: ['drywall services', 'wall repair services', 'drywall installation', 'drywall repair', 'ceiling services', 'water damage repair', 'professional contractors'],
   openGraph: {

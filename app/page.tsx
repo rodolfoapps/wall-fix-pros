@@ -4,11 +4,11 @@ import { CheckIcon, MapPinIcon, ClockIcon, ShieldCheckIcon } from '@heroicons/re
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Professional Drywall & Wall Repair Services | Wall Fix Pros MD, VA, WV, PA',
+  title: 'Professional Drywall & Wall Repair Services | MD, VA, WV, PA',
   description: 'Wall Fix Pros provides expert drywall installation, repair, patching, and wall services in Maryland, Virginia, West Virginia, and Pennsylvania. Licensed, insured, and serving 30+ cities since 2015. Get your free quote today!',
   keywords: ['drywall contractors', 'wall repair services', 'drywall installation', 'Frederick MD drywall', 'Maryland drywall repair', 'Virginia drywall contractors', 'professional drywall services'],
   openGraph: {
-    title: 'Professional Drywall & Wall Repair Services | Wall Fix Pros',
+    title: 'Professional Drywall & Wall Repair Services',
     description: 'Expert drywall installation, repair, and wall services serving MD, VA, WV, PA. Licensed & insured since 2015.',
     url: 'https://wallfixpros.com',
   },
@@ -84,11 +84,13 @@ export default function HomePage() {
         {/* Hero Image */}
         <div className="relative h-[400px] sm:h-[500px] lg:h-[600px]">
           <Image
-            src="/images/hero/Hero - Fix Wall Pro.png"
+            src="/images/hero/hero-desktop.webp"
             alt="Professional drywall and wall repair services by Wall Fix Pros"
             fill
             priority
             className="object-cover"
+            sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
+            quality={85}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         </div>

@@ -4,7 +4,7 @@ import { MapPinIcon, ChevronRightIcon, StarIcon } from '@heroicons/react/24/outl
 import locationsData from '../../data/locations.json'
 
 export const metadata: Metadata = {
-  title: 'Service Areas - Wall Fix Pros | Maryland, Virginia, West Virginia, Pennsylvania',
+  title: 'Service Areas | Maryland, Virginia, West Virginia, Pennsylvania',
   description: 'Wall Fix Pros serves 33 cities across Maryland, Virginia, West Virginia, and Pennsylvania. Find drywall repair services in your area.',
 }
 

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { CheckCircleIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'About Wall Fix Pros | Professional Drywall Repair Experts',
+  title: 'About Us | Professional Drywall Repair Experts',
   description: 'Learn about Wall Fix Pros, your trusted drywall repair experts serving Maryland, Virginia, West Virginia, and Pennsylvania since 2015.',
 }
 

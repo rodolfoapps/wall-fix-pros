@@ -27,8 +27,8 @@ export async function generateMetadata(
   }
 
   return {
-    title: `${service.name} Services | Wall Fix Pros MD, VA, WV, PA`,
-    description: `Professional ${service.name.toLowerCase()} services in Maryland, Virginia, West Virginia, and Pennsylvania. ${service.shortDescription}. Licensed, insured, and trusted since 2015.`,
+    title: `${service.name} Services | MD, VA, WV, PA`,
+    description: `Professional ${service.name.toLowerCase()} services in Maryland, Virginia, West Virginia, and Pennsylvania. ${service.shortDescription} Licensed, insured, and trusted since 2015 with 24/7 emergency service.`,
     keywords: [
       service.name.toLowerCase(),
       `${service.name.toLowerCase()} services`,

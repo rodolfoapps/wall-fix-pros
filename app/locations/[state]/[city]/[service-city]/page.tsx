@@ -18,14 +18,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   if (!service || !city || !state) {
     return {
-      title: 'Service Not Found - Wall Fix Pros',
+      title: 'Service Not Found',
       description: 'The requested service page was not found.'
     }
   }
 
   return {
-    title: `${service.name} ${city.name}, ${state.abbreviation} | Wall Fix Pros ${city.isHeadquarters ? '- Headquarters' : ''}`,
-    description: `Professional ${service.name.toLowerCase()} services in ${city.name}, ${state.abbreviation}. ${service.shortDescription} ${city.isHeadquarters ? 'Headquarters location with fastest response times.' : 'Expert local service.'}`,
+    title: `${service.name} ${city.name}, ${state.abbreviation}${city.isHeadquarters ? ' - Headquarters' : ''}`,
+    description: `Professional ${service.name.toLowerCase()} services in ${city.name}, ${state.abbreviation}. ${service.shortDescription} ${city.isHeadquarters ? 'Headquarters location with fastest response times and comprehensive warranty coverage.' : 'Expert local service with same-day availability and guaranteed quality.'}`,
   }
 }
 

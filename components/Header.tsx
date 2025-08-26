@@ -48,12 +48,13 @@ export default function Header() {
                 isScrolled ? 'h-10 w-auto' : 'h-12 w-auto'
               }`}>
                 <Image
-                  src="/images/Assets/Logo-WALL-FIX-PRO.webp"
+                  src="/images/Assets/logo-header-optimized.webp"
                   alt="Wall Fix Pros - Professional Drywall and Wall Repair Services"
-                  width={isScrolled ? 160 : 200}
-                  height={isScrolled ? 40 : 50}
+                  width={isScrolled ? 80 : 96}
+                  height={isScrolled ? 40 : 48}
                   priority
                   className="h-full w-auto"
+                  quality={90}
                 />
               </div>
             </Link>

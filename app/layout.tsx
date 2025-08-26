@@ -3,8 +3,14 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PerformanceOptimizations from '@/components/PerformanceOptimizations'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter'
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wallfixpros.com'),
@@ -63,6 +69,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://wallfixpros.com" />
+        <meta name="theme-color" content="#2563eb" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -116,6 +126,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <PerformanceOptimizations />
         <Header />
         <main>{children}</main>
         <Footer />

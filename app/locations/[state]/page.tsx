@@ -12,14 +12,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   if (!state) {
     return {
-      title: 'State Not Found - Wall Fix Pros',
+      title: 'State Not Found',
       description: 'The requested state page was not found.'
     }
   }
 
   return {
-    title: `Drywall Repair Services in ${state.name} | Wall Fix Pros`,
-    description: `Professional drywall repair and installation services throughout ${state.name}. Licensed, insured, and serving ${state.cities.length} cities with expert craftsmanship.`,
+    title: `Drywall Repair Services in ${state.name}`,
+    description: `Professional drywall repair and installation services throughout ${state.name}. Licensed, insured, and serving ${state.cities.length} cities with expert craftsmanship, same-day service, and comprehensive warranties.`,
   }
 }
 
