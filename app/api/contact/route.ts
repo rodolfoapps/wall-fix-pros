@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           success: false, 
-          message: 'Email service is not configured. Please contact us directly at (301) 555-0199.' 
+          message: 'Email service is not configured. Please contact us directly at (240) 670-1949.' 
         },
         { status: 503 }
       )
