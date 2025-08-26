@@ -203,7 +203,7 @@ export default function SitemapPage() {
                         className="text-blue-600 hover:text-blue-800 hover:underline text-sm"
                       >
                         {city.name}
-                        {city.isHQ && (
+                        {(city as any).isHQ && (
                           <span className="ml-1 text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">
                             Headquarters
                           </span>
