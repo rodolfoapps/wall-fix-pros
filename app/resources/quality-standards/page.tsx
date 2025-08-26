@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ShieldCheckIcon, CheckCircleIcon, StarIcon, TrophyIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Quality Standards & Guarantees | Wall Fix Pros Professional Standards',
+  title: 'Quality Standards & Guarantees | Pro Standards',
   description: 'Learn about Wall Fix Pros quality standards, professional certifications, warranty coverage, and our commitment to excellence in drywall services.',
 }
 

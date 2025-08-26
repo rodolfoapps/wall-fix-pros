@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, EyeIcon, ShieldCheckIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Drywall Maintenance Tips | Keep Your Walls in Perfect Condition',
+  title: 'Drywall Maintenance Tips | Perfect Wall Care Guide',
   description: 'Expert drywall maintenance tips from Wall Fix Pros. Learn how to prevent damage, maintain your walls, and extend their lifespan with proper care.',
 }
 

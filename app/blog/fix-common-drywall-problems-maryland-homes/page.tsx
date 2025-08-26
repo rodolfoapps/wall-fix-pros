@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon, WrenchScrewdriverIcon, ExclamationTriangleIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'How to Fix Common Drywall Problems in Maryland Homes: Complete Guide',
+  title: 'Fix Common Drywall Problems: Maryland Homes Guide',
   description: 'Expert guide to fixing common drywall problems in Maryland homes. Learn professional repair techniques for cracks, holes, water damage, and more with step-by-step instructions.',
 }
 

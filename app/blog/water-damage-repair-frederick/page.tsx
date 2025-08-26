@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Water Damage Drywall Repair: Complete Guide for Frederick Homeowners',
+  title: 'Water Damage Drywall Repair: Frederick Guide',
   description: 'Comprehensive water damage drywall repair guide for Frederick homeowners. Emergency response, repair vs replace decisions, costs, and prevention tips from local experts.',
 }
 

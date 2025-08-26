@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: '2025 Drywall Repair Costs in Maryland, Virginia, and Pennsylvania',
+  title: '2025 Drywall Repair Costs: MD, VA, PA Pricing Guide',
   description: 'Complete 2025 pricing guide for drywall repairs across MD, VA, and PA. Get accurate cost estimates, budget planning tips, and regional pricing differences.',
 }
 

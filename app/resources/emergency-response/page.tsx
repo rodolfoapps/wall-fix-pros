@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ExclamationTriangleIcon, PhoneIcon, ClockIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Emergency Drywall Response Guide | Wall Fix Pros 24/7 Service',
+  title: 'Emergency Drywall Response | 24/7 Service Guide',
   description: 'Emergency drywall repair guide from Wall Fix Pros. Learn how to handle water damage, accidents, and urgent wall repairs. 24/7 emergency service available.',
 }
 
