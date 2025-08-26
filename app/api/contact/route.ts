@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
 // Initialize Resend with a fallback to prevent build errors
-const resend = new Resend(process.env.RESEND_API_KEY || 'fallback_key_for_build')
+const resend = new Resend(process.env.RESEND_API_KEY || 're_fallback_for_build_only')
 
 export async function POST(request: NextRequest) {
   try {
     // Check if API key is properly configured
-    if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 'fallback_key_for_build') {
+    if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 're_fallback_for_build_only') {
       return NextResponse.json(
         { 
           success: false, 
