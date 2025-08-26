@@ -249,6 +249,154 @@ export default function ServiceCityPage({ params }: Props) {
         </div>
       </div>
 
+      {/* Related Services Section */}
+      <div className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Related Services in {city.name}
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Complete drywall and wall repair solutions for your {city.name} property
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {/* Contextual service links based on current service */}
+            {service.slug === 'ceiling-services' && (
+              <>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Drywall Repair</h3>
+                  <p className="text-gray-600 text-sm mb-4">Professional drywall repair services to complement your ceiling work.</p>
+                  <Link href={`/services/drywall-repair/${city.slug}-drywall-repair`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    Drywall Repair in {city.name} →
+                  </Link>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Drywall Installation</h3>
+                  <p className="text-gray-600 text-sm mb-4">Complete drywall installation for new construction and renovations.</p>
+                  <Link href={`/services/drywall-installation/${city.slug}-drywall-installation`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    Drywall Installation in {city.name} →
+                  </Link>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Painting Services</h3>
+                  <p className="text-gray-600 text-sm mb-4">Professional painting services to finish your ceiling project.</p>
+                  <Link href={`/services/painting-services/${city.slug}-painting-services`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    Painting Services in {city.name} →
+                  </Link>
+                </div>
+              </>
+            )}
+            
+            {service.slug === 'drywall-patching' && (
+              <>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Drywall Repair</h3>
+                  <p className="text-gray-600 text-sm mb-4">Complete drywall repair services beyond simple patching.</p>
+                  <Link href={`/services/drywall-repair/${city.slug}-drywall-repair`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    Drywall Repair in {city.name} →
+                  </Link>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Drywall Taping</h3>
+                  <p className="text-gray-600 text-sm mb-4">Professional taping and finishing after patching work.</p>
+                  <Link href={`/services/drywall-taping/${city.slug}-drywall-taping`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    Drywall Taping in {city.name} →
+                  </Link>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Drywall Texturing</h3>
+                  <p className="text-gray-600 text-sm mb-4">Texture matching and application for seamless repairs.</p>
+                  <Link href={`/services/drywall-texturing/${city.slug}-drywall-texturing`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    Drywall Texturing in {city.name} →
+                  </Link>
+                </div>
+              </>
+            )}
+            
+            {service.slug === 'drywall-restoration' && (
+              <>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Water Damage Repair</h3>
+                  <p className="text-gray-600 text-sm mb-4">Specialized water damage restoration and drywall replacement.</p>
+                  <Link href={`/services/water-damage-repair/${city.slug}-water-damage-repair`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    Water Damage Repair in {city.name} →
+                  </Link>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Drywall Installation</h3>
+                  <p className="text-gray-600 text-sm mb-4">Complete drywall installation for restoration projects.</p>
+                  <Link href={`/services/drywall-installation/${city.slug}-drywall-installation`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    Drywall Installation in {city.name} →
+                  </Link>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Insulation Services</h3>
+                  <p className="text-gray-600 text-sm mb-4">Insulation replacement during restoration work.</p>
+                  <Link href={`/services/insulation-services/${city.slug}-insulation-services`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    Insulation Services in {city.name} →
+                  </Link>
+                </div>
+              </>
+            )}
+            
+            {service.slug === 'water-damage-repair' && (
+              <>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Drywall Restoration</h3>
+                  <p className="text-gray-600 text-sm mb-4">Complete drywall restoration after water damage.</p>
+                  <Link href={`/services/drywall-restoration/${city.slug}-drywall-restoration`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    Drywall Restoration in {city.name} →
+                  </Link>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Drywall Replacement</h3>
+                  <p className="text-gray-600 text-sm mb-4">Full drywall replacement for severely damaged areas.</p>
+                  <Link href={`/services/drywall-installation/${city.slug}-drywall-installation`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    Drywall Installation in {city.name} →
+                  </Link>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Ceiling Water Damage</h3>
+                  <p className="text-gray-600 text-sm mb-4">Specialized ceiling repair after water damage.</p>
+                  <Link href={`/services/ceiling-services/${city.slug}-ceiling-services`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    Ceiling Services in {city.name} →
+                  </Link>
+                </div>
+              </>
+            )}
+
+            {/* Default related services for other services */}
+            {!['ceiling-services', 'drywall-patching', 'drywall-restoration', 'water-damage-repair'].includes(service.slug) && (
+              <>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">All Drywall Services</h3>
+                  <p className="text-gray-600 text-sm mb-4">Browse our complete range of drywall services.</p>
+                  <Link href="/services" className="text-blue-600 hover:text-blue-800 font-medium">
+                    View All Services →
+                  </Link>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Emergency Repairs</h3>
+                  <p className="text-gray-600 text-sm mb-4">24/7 emergency drywall repair services.</p>
+                  <Link href="/resources/emergency-response" className="text-blue-600 hover:text-blue-800 font-medium">
+                    Emergency Services →
+                  </Link>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Service Area</h3>
+                  <p className="text-gray-600 text-sm mb-4">All our services available in {city.name}.</p>
+                  <Link href={`/locations/${state.slug}/${city.slug}`} className="text-blue-600 hover:text-blue-800 font-medium">
+                    {city.name} Services →
+                  </Link>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+
       {/* CTA Section */}
       <div className="bg-blue-600">
         <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
