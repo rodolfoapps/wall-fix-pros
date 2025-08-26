@@ -26,9 +26,10 @@ module.exports = {
         ]
       }
     ],
-    additionalSitemaps: [
-      'https://wallfixpros.com/sitemap.xml',
-    ],
+    // Remove self-reference that causes circular sitemap issue
+    // additionalSitemaps: [
+    //   'https://wallfixpros.com/sitemap.xml',
+    // ],
   },
   transform: async (config, path) => {
     // Custom priority and changefreq based on page type
@@ -110,24 +111,9 @@ module.exports = {
       images: [],
     }
   },
-  additionalPaths: async (config) => {
-    const result = []
-    
-    // Add any manual URLs that might not be auto-discovered
-    const manualUrls = [
-      '/sitemap.xml',
-      '/sitemap-0.xml',
-    ]
-    
-    for (const url of manualUrls) {
-      result.push({
-        loc: url,
-        changefreq: 'daily',
-        priority: 0.3,
-        lastmod: new Date().toISOString(),
-      })
-    }
-    
-    return result
-  },
+  // Remove additionalPaths that was causing circular reference
+  // additionalPaths: async (config) => {
+  //   const result = []
+  //   return result
+  // },
 }
