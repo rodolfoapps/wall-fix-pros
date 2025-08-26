@@ -236,7 +236,7 @@ export default function CityPage({ params }: Props) {
                   href={`/services/${service.slug}`}
                   className="mt-6 inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                 >
-                  Learn More →
+                  {service.name} Services →
                 </Link>
               </div>
             ))}
