@@ -153,6 +153,11 @@ export default function Footer() {
                       Resources
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/sitemap" className="text-sm leading-6 text-gray-300 hover:text-white">
+                      Sitemap
+                    </Link>
+                  </li>
                 </ul>
               </div>
               

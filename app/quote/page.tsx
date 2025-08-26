@@ -1,11 +1,67 @@
-import type { Metadata } from 'next'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'Get Free Quote | Wall Fix Pros Drywall Repair',
-  description: 'Get a free, no-obligation quote for your drywall repair project. Fast response times and competitive pricing across Maryland, Virginia, West Virginia, and Pennsylvania.',
-}
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function QuotePage() {
+  const router = useRouter()
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    address: '',
+    service: '',
+    description: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null
+    message: string
+  }>({ type: null, message: '' })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus({ type: null, message: '' })
+
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        // Redirect to thank you page on success
+        router.push('/thank-you')
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.message || 'Something went wrong. Please try again.'
+        })
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to submit quote request. Please call us directly at (240) 670-1949.'
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -35,29 +91,44 @@ export default function QuotePage() {
               Fill out the form below and we'll contact you within 24 hours with your free quote.
             </p>
 
-            <form className="mt-8 space-y-6">
+            {/* Status Messages */}
+            {submitStatus.type && (
+              <div className={`mt-6 p-4 rounded-md ${
+                submitStatus.type === 'success' 
+                  ? 'bg-green-50 text-green-800 border border-green-200' 
+                  : 'bg-red-50 text-red-800 border border-red-200'
+              }`}>
+                {submitStatus.message}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="mt-8 space-y-6">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
                     First name
                   </label>
                   <input
                     type="text"
-                    name="first-name"
-                    id="first-name"
+                    name="firstName"
+                    id="firstName"
                     required
+                    value={formData.firstName}
+                    onChange={handleChange}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-blue-500 focus:ring-brand-blue-500"
                   />
                 </div>
                 <div>
-                  <label htmlFor="last-name" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
                     Last name
                   </label>
                   <input
                     type="text"
-                    name="last-name"
-                    id="last-name"
+                    name="lastName"
+                    id="lastName"
                     required
+                    value={formData.lastName}
+                    onChange={handleChange}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-blue-500 focus:ring-brand-blue-500"
                   />
                 </div>
@@ -72,6 +143,8 @@ export default function QuotePage() {
                   name="email"
                   id="email"
                   required
+                  value={formData.email}
+                  onChange={handleChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-blue-500 focus:ring-brand-blue-500"
                 />
               </div>
@@ -85,6 +158,8 @@ export default function QuotePage() {
                   name="phone"
                   id="phone"
                   required
+                  value={formData.phone}
+                  onChange={handleChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-blue-500 focus:ring-brand-blue-500"
                 />
               </div>
@@ -98,6 +173,8 @@ export default function QuotePage() {
                   name="address"
                   id="address"
                   required
+                  value={formData.address}
+                  onChange={handleChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-blue-500 focus:ring-brand-blue-500"
                 />
               </div>
@@ -110,6 +187,8 @@ export default function QuotePage() {
                   name="service"
                   id="service"
                   required
+                  value={formData.service}
+                  onChange={handleChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-blue-500 focus:ring-brand-blue-500"
                 >
                   <option value="">Select a service</option>
@@ -136,6 +215,8 @@ export default function QuotePage() {
                   rows={4}
                   required
                   placeholder="Please describe the work needed, size of area, timeline, etc."
+                  value={formData.description}
+                  onChange={handleChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-blue-500 focus:ring-brand-blue-500"
                 />
               </div>
@@ -143,9 +224,14 @@ export default function QuotePage() {
               <div>
                 <button
                   type="submit"
-                  className="w-full flex justify-center rounded-md border border-transparent bg-brand-orange-500 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-brand-orange-600 focus:outline-none focus:ring-2 focus:ring-brand-orange-500 focus:ring-offset-2"
+                  disabled={isSubmitting}
+                  className={`w-full flex justify-center rounded-md border border-transparent py-3 px-4 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 focus:ring-offset-2 ${
+                    isSubmitting 
+                      ? 'bg-gray-400 cursor-not-allowed' 
+                      : 'bg-brand-orange-500 hover:bg-brand-orange-600'
+                  }`}
                 >
-                  Request Free Quote
+                  {isSubmitting ? 'Submitting...' : 'Request Free Quote'}
                 </button>
               </div>
             </form>
