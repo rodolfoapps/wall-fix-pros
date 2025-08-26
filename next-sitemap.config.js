@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://wallfixpros.com',
+  siteUrl: process.env.SITE_URL || 'https://www.wallfixpros.com',
   generateRobotsTxt: true,
   generateIndexSitemap: true, // Enable sitemap index
   sitemapSize: 5000, // Split sitemaps at 5000 URLs each
