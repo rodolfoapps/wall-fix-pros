@@ -28,24 +28,16 @@ export async function POST(request: NextRequest) {
       message
     } = formData
 
-    // Get email recipients from environment variables
-    const primaryEmail = process.env.NOTIFICATION_EMAIL_PRIMARY
+    // Get email recipients from environment variables with fallbacks
+    const primaryEmail = process.env.NOTIFICATION_EMAIL_PRIMARY || 'rodolfovergara14@gmail.com'
     const secondaryEmail = process.env.NOTIFICATION_EMAIL_SECONDARY
     const fromEmail = process.env.FROM_EMAIL || 'noreply@wallfixpros.com'
     const companyName = process.env.COMPANY_NAME || 'Wall Fix Pros'
 
     // Create list of recipients
-    const recipients: string[] = []
-    if (primaryEmail) {
-      recipients.push(primaryEmail)
-    }
+    const recipients: string[] = [primaryEmail]
     if (secondaryEmail) {
       recipients.push(secondaryEmail)
-    }
-    
-    // Ensure we have at least one recipient
-    if (recipients.length === 0) {
-      throw new Error('No notification email recipients configured')
     }
 
     // Email content for notification
@@ -87,7 +79,7 @@ export async function POST(request: NextRequest) {
       <p><strong>Your Message:</strong></p>
       <p>${message}</p>
       <br>
-      <p>If you need immediate assistance, please call us at (301) 555-0199.</p>
+      <p>If you need immediate assistance, please call us at (240) 670-1949.</p>
       <p>Best regards,<br>${companyName} Team</p>
       <hr>
       <p style="color: #666; font-size: 12px;">This is an automated confirmation email. Please do not reply to this email.</p>
