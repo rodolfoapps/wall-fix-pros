@@ -7,10 +7,13 @@ export const metadata: Metadata = {
   title: 'Professional Drywall & Wall Repair Services | MD, VA, WV, PA',
   description: 'Wall Fix Pros provides expert drywall installation, repair, patching, and wall services in Maryland, Virginia, West Virginia, and Pennsylvania. Licensed, insured, and serving 30+ cities since 2015. Get your free quote today!',
   keywords: ['drywall contractors', 'wall repair services', 'drywall installation', 'Frederick MD drywall', 'Maryland drywall repair', 'Virginia drywall contractors', 'professional drywall services'],
+  alternates: {
+    canonical: 'https://www.wallfixpros.com/',
+  },
   openGraph: {
     title: 'Professional Drywall & Wall Repair Services',
     description: 'Expert drywall installation, repair, and wall services serving MD, VA, WV, PA. Licensed & insured since 2015.',
-    url: 'https://wallfixpros.com',
+    url: 'https://www.wallfixpros.com/',
   },
 }
 

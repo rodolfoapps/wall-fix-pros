@@ -8,10 +8,13 @@ export const metadata: Metadata = {
   title: 'Professional Drywall Services | MD, VA, WV, PA',
   description: 'Complete drywall and wall repair services including installation, repair, patching, taping, texturing, ceiling work, water damage restoration, and painting. Serving Maryland, Virginia, West Virginia, and Pennsylvania.',
   keywords: ['drywall services', 'wall repair services', 'drywall installation', 'drywall repair', 'ceiling services', 'water damage repair', 'professional contractors'],
+  alternates: {
+    canonical: 'https://www.wallfixpros.com/services/',
+  },
   openGraph: {
     title: 'Professional Drywall Services | Wall Fix Pros',
     description: 'Complete drywall and wall repair services serving MD, VA, WV, PA. Expert installation, repair, and restoration.',
-    url: 'https://wallfixpros.com/services',
+    url: 'https://www.wallfixpros.com/services/',
   },
 }
 

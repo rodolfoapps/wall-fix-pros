@@ -13,7 +13,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wallfixpros.com'),
+  metadataBase: new URL('https://www.wallfixpros.com'),
   title: {
     default: 'Wall Fix Pros - Professional Drywall & Wall Repair Services | MD, VA, WV, PA',
     template: '%s | Wall Fix Pros'
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://wallfixpros.com',
+    url: 'https://www.wallfixpros.com',
     siteName: 'Wall Fix Pros',
     title: 'Wall Fix Pros - Professional Drywall & Wall Repair Services',
     description: 'Professional drywall installation, repair, and wall services in Maryland, Virginia, West Virginia, and Pennsylvania.',
@@ -96,7 +96,7 @@ export default function RootLayout({
                 "longitude": -77.4105
               },
               "telephone": "+1-301-555-0199",
-              "url": "https://wallfixpros.com",
+              "url": "https://www.wallfixpros.com",
               "openingHours": [
                 "Mo-Fr 07:00-19:00",
                 "Sa 08:00-18:00", 
