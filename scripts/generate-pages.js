@@ -334,7 +334,7 @@ export default function ${serviceName.replace(/\s+/g, '')}${cityName.replace(/\s
             ${isHeadquarters ? `
             <div className="mt-8 text-center">
               <p className="text-sm text-blue-100">
-                📍 Headquarters: DC Generals Roofing 4580 Mack Ave Suite Frederick, MD 21703
+                📍 Headquarters: Wall Fix Pros 4580 Mack Ave Suite Frederick, MD 21703
               </p>
             </div>` : ''}
           </div>

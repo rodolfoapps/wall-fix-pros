@@ -135,7 +135,7 @@ Frederick is the headquarters location and receives enhanced SEO:
 ## 🏢 Business Information
 
 - **Company**: Wall Fix Pros
-- **Address**: DC Generals Roofing 4580 Mack Ave Suite Frederick, MD 21703
+- **Address**: Wall Fix Pros 4580 Mack Ave Suite Frederick, MD 21703
 - **Phone**: (301) 555-0199
 - **Service Areas**: 33 cities across MD, VA, WV, PA
 - **Established**: 2015
