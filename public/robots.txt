@@ -6,7 +6,7 @@ Disallow: /admin/
 Disallow: /404
 
 # Host
-Host: https://www.wallfixpros.com
+Host: https://wallfixpro.com
 
 # Sitemaps
-Sitemap: https://www.wallfixpros.com/sitemap.xml
+Sitemap: https://wallfixpro.com/sitemap.xml

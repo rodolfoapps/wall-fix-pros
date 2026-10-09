@@ -19,7 +19,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `Drywall Repair Services in ${state.name}`,
-    description: `Professional drywall repair and installation services throughout ${state.name}. Licensed, insured, and serving ${state.cities.length} cities with expert craftsmanship, same-day service, and comprehensive warranties.`,
+    description: `Professional drywall repair and installation across ${state.name}. Licensed, insured and serving ${state.cities.length} cities with expert craftsmanship and warranties.`,
+    alternates: { canonical: `/locations/${params.state}/` },
   }
 }
 

@@ -23,27 +23,5 @@
       ]
     }
   ],
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "wallfixpros.com"
-        }
-      ],
-      "destination": "https://www.wallfixpros.com/$1",
-      "permanent": true
-    },
-    {
-      "source": "/drywall-repair",
-      "destination": "/services/drywall-repair",
-      "permanent": true
-    },
-    {
-      "source": "/drywall-installation", 
-      "destination": "/services/drywall-installation",
-      "permanent": true
-    }
-  ]
+  "redirects": []
 }

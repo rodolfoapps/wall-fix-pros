@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon, CheckCircleIcon, ExclamationTriangleIcon, MagnifyingGlassIcon, DocumentCheckIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/spring-drywall-inspection-checklist-dmv/' },
   title: 'Spring Home Maintenance: Drywall Inspection Checklist for DMV Homeowners',
   description: 'Comprehensive spring drywall inspection checklist for DC Metro area homeowners. Catch problems early and save on repairs with professional guidance from Wall Fix Pros.',
 }
@@ -586,7 +587,7 @@ export default function SpringDrywallInspectionPage() {
                 href="tel:+12406701949"
                 className="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200"
               >
-                Emergency Line: (301) 555-0199
+                Emergency Line: (240) 670-1949
               </a>
             </div>
           </div>

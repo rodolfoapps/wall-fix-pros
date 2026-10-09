@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon, CheckCircleIcon, ExclamationTriangleIcon, CurrencyDollarIcon, ClockIcon as TimeIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/basement-drywall-installation-columbia-maryland/' },
   title: 'Case Study: Complete Basement Drywall Installation in Columbia, Maryland',
   description: 'Detailed case study of complete basement drywall installation in Columbia, MD. From planning to completion with costs, timeline, and professional insights.',
 }

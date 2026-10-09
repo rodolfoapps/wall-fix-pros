@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon, CurrencyDollarIcon, CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/diy-vs-professional-drywall-installation-virginia/' },
   title: 'DIY vs Professional Drywall Installation: Why Virginia Homeowners Choose Pros',
   description: 'Complete comparison of DIY vs professional drywall installation costs, quality, and results. See why Virginia homeowners choose professional contractors for their projects.',
 }

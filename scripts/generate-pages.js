@@ -143,7 +143,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '${serviceName} in ${cityName}, ${stateAbbrev} | Wall Fix Pros',
     description: 'Professional ${serviceName.toLowerCase()} services in ${cityName}, ${stateName}.',
-    url: 'https://wallfixpros.com${baseUrl}',
+    url: 'https://wallfixpro.com${baseUrl}',
   },
 }
 

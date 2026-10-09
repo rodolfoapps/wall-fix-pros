@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { CheckCircleIcon, ExclamationTriangleIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Complete Drywall Repair Guide | Wall Fix Pros Expert Tips',
+  alternates: { canonical: '/resources/drywall-repair-guide/' },
+  title: 'Complete Drywall Repair Guide: Expert Tips',
   description: 'Comprehensive guide to drywall repair from Wall Fix Pros experts. Learn about damage types, tools needed, repair techniques, and when to call professionals.',
 }
 

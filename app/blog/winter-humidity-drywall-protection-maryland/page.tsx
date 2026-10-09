@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon, ExclamationTriangleIcon, CheckCircleIcon, CloudIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/winter-humidity-drywall-protection-maryland/' },
   title: 'Winter Humidity and Your Drywall: Protecting Your Maryland Home',
   description: 'Learn how Maryland winter humidity affects your drywall and proven strategies to protect your home during cold months. Expert tips from Wall Fix Pros.',
 }
@@ -595,7 +596,7 @@ export default function WinterHumidityDrywallPage() {
                 href="tel:+12406701949"
                 className="border-2 border-blue-300 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-200"
               >
-                Emergency: (301) 555-0199
+                Emergency: (240) 670-1949
               </a>
             </div>
             <p className="text-blue-200 text-sm mt-4">

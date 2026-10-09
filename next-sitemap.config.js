@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://www.wallfixpros.com',
+  siteUrl: process.env.SITE_URL || 'https://wallfixpro.com',
   generateRobotsTxt: true,
   generateIndexSitemap: true, // Enable sitemap index
   sitemapSize: 5000, // Split sitemaps at 5000 URLs each
@@ -11,7 +11,12 @@ module.exports = {
     '/api/*',
     '/404',
     '/_*',
-    '/admin/*'
+    '/admin/*',
+    '/thank-you',
+    '/sitemap',
+    '/icon.png',
+    '/apple-icon.png',
+    '/favicon.ico'
   ],
   robotsTxtOptions: {
     policies: [
@@ -27,7 +32,7 @@ module.exports = {
     ],
     // Remove self-reference that causes circular sitemap issue
     // additionalSitemaps: [
-    //   'https://wallfixpros.com/sitemap.xml',
+    //   'https://wallfixpro.com/sitemap.xml',
     // ],
   },
   transform: async (config, path) => {
@@ -41,7 +46,7 @@ module.exports = {
       changefreq = 'daily'
     } 
     // Main navigation pages - very high priority
-    else if (['/services', '/locations', '/contact', '/quote', '/about', '/thank-you'].includes(path)) {
+    else if (['/services', '/locations', '/contact', '/quote', '/about'].includes(path)) {
       priority = 0.95
       changefreq = 'weekly'
     }

@@ -3,7 +3,9 @@ import Link from 'next/link'
 import { CheckCircleIcon, PhoneIcon, ClockIcon, EnvelopeIcon, HomeIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Thank You | Wall Fix Pros',
+  alternates: { canonical: '/thank-you/' },
+  robots: { index: false, follow: true },
+  title: 'Thank You',
   description: 'Thank you for contacting Wall Fix Pros. We have received your message and will respond within 24 hours.',
 }
 
@@ -158,8 +160,8 @@ export default function ThankYouPage() {
         <div className="mt-12 text-center">
           <p className="text-gray-600">
             Have additional questions? Feel free to email us at{' '}
-            <a href="mailto:info@wallfixpros.com" className="text-blue-600 hover:text-blue-700 font-medium">
-              info@wallfixpros.com
+            <a href="mailto:info@wallfixpro.com" className="text-blue-600 hover:text-blue-700 font-medium">
+              info@wallfixpro.com
             </a>
           </p>
         </div>

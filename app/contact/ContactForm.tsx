@@ -149,8 +149,8 @@ export default function ContactForm() {
                     <EnvelopeIcon className="h-7 w-6 text-gray-400" aria-hidden="true" />
                   </dt>
                   <dd>
-                    <a className="hover:text-gray-900" href="mailto:info@wallfixpros.com">
-                      info@wallfixpros.com
+                    <a className="hover:text-gray-900" href="mailto:info@wallfixpro.com">
+                      info@wallfixpro.com
                     </a>
                   </dd>
                 </div>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon, StarIcon, CheckCircleIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/drywall-transformations-bethesda-rockville/' },
   title: 'Before & After: Amazing Drywall Transformations in Bethesda and Rockville',
   description: 'See incredible before and after drywall transformations from Wall Fix Pros projects in Bethesda and Rockville. Real case studies with photos and detailed results.',
 }

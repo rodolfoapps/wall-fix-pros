@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon, SwatchIcon, PaintBrushIcon, CheckCircleIcon, XCircleIcon, StarIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/drywall-texturing-options-dmv-modern-homes/' },
   title: 'Drywall Texturing Options: Popular Choices for Modern Homes in the DMV Area',
   description: 'Explore popular drywall texturing options for DMV area homes. Latest trends, costs, and professional application techniques from Wall Fix Pros experts.',
 }

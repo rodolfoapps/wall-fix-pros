@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Sitemap | Wall Fix Pros - All Pages',
+  alternates: { canonical: '/sitemap/' },
+  title: 'Sitemap',
   description: 'Complete sitemap of Wall Fix Pros website. Find all our drywall services, locations across Maryland, Virginia, West Virginia, and Pennsylvania.',
 }
 
@@ -246,7 +247,7 @@ export default function SitemapPage() {
             </ul>
             <p className="mt-4 text-sm text-gray-600">
               Example: 
-              <Link href="/services/drywall-repair/frederick-drywall-repair" className="text-blue-600 hover:underline ml-1">
+              <Link href="/locations/maryland/frederick/drywall-repair-frederick" className="text-blue-600 hover:underline ml-1">
                 Frederick Drywall Repair
               </Link>
               {' or '}

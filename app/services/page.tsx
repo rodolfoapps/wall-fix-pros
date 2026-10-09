@@ -5,16 +5,15 @@ import type { Metadata } from 'next'
 import servicesData from '@/data/services.json'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services/' },
   title: 'Professional Drywall Services | MD, VA, WV, PA',
   description: 'Complete drywall and wall repair services including installation, repair, patching, taping, texturing, ceiling work, water damage restoration, and painting. Serving Maryland, Virginia, West Virginia, and Pennsylvania.',
   keywords: ['drywall services', 'wall repair services', 'drywall installation', 'drywall repair', 'ceiling services', 'water damage repair', 'professional contractors'],
-  alternates: {
-    canonical: 'https://www.wallfixpros.com/services/',
-  },
   openGraph: {
+    images: ['/images/og-image.jpg'],
     title: 'Professional Drywall Services | Wall Fix Pros',
     description: 'Complete drywall and wall repair services serving MD, VA, WV, PA. Expert installation, repair, and restoration.',
-    url: 'https://www.wallfixpros.com/services/',
+    url: '/services/',
   },
 }
 

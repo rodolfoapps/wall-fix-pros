@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon, WrenchScrewdriverIcon, CheckCircleIcon, ExclamationTriangleIcon, AcademicCapIcon, BeakerIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/complete-guide-drywall-taping-finishing-techniques/' },
   title: 'Drywall Taping and Finishing Guide: Professional Tips',
   description: 'Master professional drywall taping and finishing techniques. Comprehensive guide with expert tips, quality standards, and step-by-step instructions from Wall Fix Pros.',
 }

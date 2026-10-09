@@ -10,7 +10,8 @@
     "generate-pages": "node scripts/generate-pages.js",
     "update-sitemap": "next-sitemap",
     "validate-data": "node scripts/validate-data.js",
-    "optimize-images": "node scripts/optimize-images.js"
+    "optimize-images": "node scripts/optimize-images.js",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.19",

@@ -39,9 +39,9 @@ A comprehensive SEO-optimized website for Wall Fix Pros, a professional drywall 
 - 4 State hub pages
 - 33 City pages across MD, VA, WV, PA
 
-### Service-Location Combinations (600+)
-- **Structure 1**: `/services/[service]/[city-service]/`
-- **Structure 2**: `/locations/[state]/[city]/[service-city]/`
+### Service-Location Combinations (330)
+- `/locations/[state]/[city]/[service-city]/` is the only URL for a service in a city.
+- The former `/services/[service]/[city-service]/` structure is permanently redirected to it (see `next.config.js`).
 
 ## 🛠 Getting Started
 
@@ -136,7 +136,7 @@ Frederick is the headquarters location and receives enhanced SEO:
 
 - **Company**: Wall Fix Pros
 - **Address**: Wall Fix Pros 4580 Mack Ave Suite Frederick, MD 21703
-- **Phone**: (301) 555-0199
+- **Phone**: (240) 670-1949
 - **Service Areas**: 33 cities across MD, VA, WV, PA
 - **Established**: 2015
 - **License**: MHIC #123456
@@ -161,8 +161,12 @@ Frederick is the headquarters location and receives enhanced SEO:
 
 ### Environment Variables
 ```env
-SITE_URL=https://wallfixpros.com
-NEXT_PUBLIC_GA_ID=your-ga-id
+SITE_URL=https://wallfixpro.com
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=   # Search Console HTML-tag token (optional)
+RESEND_API_KEY=                          # see EMAIL_SETUP.md
+FROM_EMAIL="Wall Fix Pros <noreply@wallfixpro.com>"
+NOTIFICATION_EMAIL_PRIMARY=
+NOTIFICATION_EMAIL_SECONDARY=
 ```
 
 ## 📈 Performance

@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Drywall Expert Blog | Wall Fix Pros Tips & Guides',
+  alternates: { canonical: '/blog/' },
+  title: 'Drywall Expert Blog: Tips & Guides',
   description: 'Expert drywall tips, guides, and advice from Wall Fix Pros. Learn about drywall repair, installation, maintenance, and more from our experienced professionals.',
 }
 

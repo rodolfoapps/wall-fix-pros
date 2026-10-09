@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { MapPinIcon, ClockIcon, PhoneIcon, StarIcon } from '@heroicons/react/24/outline'
 import locationsData from '../../../../data/locations.json'
 import servicesData from '../../../../data/services.json'
+import { clampDescription, locationServicePath } from '@/lib/seo'
 
 interface Props {
   params: { state: string; city: string }
@@ -20,8 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `Drywall Services ${city.name}, ${state.abbreviation}${city.isHeadquarters ? ' - Headquarters' : ''}`,
-    description: `Professional drywall repair and installation services in ${city.name}, ${state.abbreviation}. ${city.isHeadquarters ? 'Our headquarters location with' : 'Offering'} fast response times, expert craftsmanship, and comprehensive drywall solutions for residential and commercial projects.`,
+    title: `Drywall Services in ${city.name}, ${state.abbreviation}`,
+    description: clampDescription(`Drywall repair, installation and ceiling services in ${city.name}, ${state.abbreviation}. ${city.isHeadquarters ? 'Our headquarters: fastest response times in the region.' : `Typical response ${city.responseTime.toLowerCase()}.`} Licensed, insured, free estimates.`),
+    alternates: { canonical: `/locations/${params.state}/${params.city}/` },
   }
 }
 
@@ -223,7 +225,7 @@ export default function CityPage({ params }: Props) {
           </div>
 
           <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {services.slice(0, 6).map((service) => (
+            {services.map((service) => (
               <div key={service.slug} className="rounded-lg bg-white p-6 shadow-md">
                 <h3 className="text-xl font-bold text-gray-900">
                   {service.name}
@@ -233,10 +235,10 @@ export default function CityPage({ params }: Props) {
                   <span className="font-medium">{service.priceRange}</span> • {service.timeline}
                 </div>
                 <Link
-                  href={`/services/${service.slug}`}
+                  href={locationServicePath(state.slug, city.slug, service.slug)}
                   className="mt-6 inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                 >
-                  {service.name} Services →
+                  {service.name} in {city.name} →
                 </Link>
               </div>
             ))}

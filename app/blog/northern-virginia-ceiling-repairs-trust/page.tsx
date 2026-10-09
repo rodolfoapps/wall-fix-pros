@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/northern-virginia-ceiling-repairs-trust/' },
   title: 'Why Northern Virginia Homeowners Trust Wall Fix Pros for Ceiling Repairs',
   description: 'Discover why Northern Virginia homeowners choose Wall Fix Pros for ceiling repairs. Customer testimonials, expert solutions, and comprehensive ceiling services.',
 }

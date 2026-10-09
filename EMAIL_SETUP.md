@@ -20,7 +20,7 @@ This guide will help you configure email notifications for form submissions on y
 For professional emails from your domain:
 1. Go to [Domains](https://resend.com/domains) in Resend
 2. Click "Add Domain"
-3. Enter your domain (e.g., `wallfixpros.com`)
+3. Enter your domain (e.g., `wallfixpro.com`)
 4. Add the DNS records shown to your domain provider
 5. Wait for verification (usually takes a few minutes)
 
@@ -39,9 +39,9 @@ NOTIFICATION_EMAIL_PRIMARY=your_email@example.com
 NOTIFICATION_EMAIL_SECONDARY=other_person@example.com
 
 # From email address
-# If you verified your domain, use: noreply@wallfixpros.com
+# If you verified your domain, use: noreply@wallfixpro.com
 # Otherwise, use: onboarding@resend.dev (for testing)
-FROM_EMAIL=noreply@wallfixpros.com
+FROM_EMAIL=noreply@wallfixpro.com
 
 # Company name
 COMPANY_NAME=Wall Fix Pros

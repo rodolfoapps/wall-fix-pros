@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon, WrenchScrewdriverIcon, ExclamationTriangleIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/fix-common-drywall-problems-maryland-homes/' },
   title: 'Fix Common Drywall Problems: Maryland Homes Guide',
   description: 'Expert guide to fixing common drywall problems in Maryland homes. Learn professional repair techniques for cracks, holes, water damage, and more with step-by-step instructions.',
 }
@@ -572,7 +573,7 @@ export default function FixDrywallProblemsPage() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Related Articles</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link href="/blog/water-damage-drywall-repair-frederick-homeowners" className="block bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
+            <Link href="/blog/water-damage-repair-frederick" className="block bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Water Damage Drywall Repair Guide</h3>
               <p className="text-gray-600 text-sm">Essential information for Frederick homeowners dealing with water damage and moisture issues.</p>
             </Link>

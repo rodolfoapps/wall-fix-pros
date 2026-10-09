@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { MapPinIcon, ClockIcon, PhoneIcon, CheckIcon } from '@heroicons/react/24/outline'
 import locationsData from '../../../../../data/locations.json'
 import servicesData from '../../../../../data/services.json'
+import { clampDescription, locationServicePath, serviceLabel } from '@/lib/seo'
 
 interface Props {
   params: { state: string; city: string; 'service-city': string }
@@ -24,8 +25,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${service.name} in ${city.name}, ${state.abbreviation}${city.isHeadquarters ? ' - Headquarters' : ''}`,
-    description: `Professional ${service.name.toLowerCase()} services in ${city.name}, ${state.abbreviation}. ${service.shortDescription} ${city.isHeadquarters ? 'Headquarters location with fastest response times and comprehensive warranty coverage.' : 'Expert local service with same-day availability and guaranteed quality.'}`,
+    title: `${service.name} in ${city.name}, ${state.abbreviation}`,
+    description: clampDescription(`${serviceLabel(service.name)} in ${city.name}, ${state.abbreviation}. ${service.shortDescription} ${city.isHeadquarters ? 'Headquarters location, fastest response.' : `Response ${city.responseTime.toLowerCase()}.`} Licensed, insured, free estimates.`),
+    alternates: { canonical: `/locations/${params.state}/${params.city}/${params['service-city']}/` },
+    openGraph: {
+      images: ['/images/og-image.jpg'],
+      title: `${service.name} in ${city.name}, ${state.abbreviation} | Wall Fix Pros`,
+      description: `${serviceLabel(service.name)} in ${city.name}. ${service.shortDescription}`,
+      url: `/locations/${params.state}/${params.city}/${params['service-city']}/`,
+    },
   }
 }
 
@@ -69,8 +77,29 @@ export default function LocationServicePage({ params }: Props) {
     )
   }
 
+  const otherServices = Object.values(servicesData).filter((s) => s.slug !== service.slug)
+  const nearbyCities = state.cities
+    .filter((slug) => slug !== city.slug)
+    .map((slug) => locationsData.cities[slug as keyof typeof locationsData.cities])
+    .filter(Boolean)
+
   return (
     <div className="bg-white">
+      {/* Breadcrumb */}
+      <nav className="flex px-6 py-4 text-sm" aria-label="Breadcrumb">
+        <ol className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <li><Link href="/" className="text-gray-500 hover:text-gray-700">Home</Link></li>
+          <li className="text-gray-400">/</li>
+          <li><Link href="/locations/" className="text-gray-500 hover:text-gray-700">Locations</Link></li>
+          <li className="text-gray-400">/</li>
+          <li><Link href={`/locations/${state.slug}/`} className="text-gray-500 hover:text-gray-700">{state.name}</Link></li>
+          <li className="text-gray-400">/</li>
+          <li><Link href={`/locations/${state.slug}/${city.slug}/`} className="text-gray-500 hover:text-gray-700">{city.name}</Link></li>
+          <li className="text-gray-400">/</li>
+          <li className="text-gray-900">{service.name}</li>
+        </ol>
+      </nav>
+
       {/* Hero Section */}
       <div className="relative bg-blue-700">
         <div className="absolute inset-0 bg-blue-700 opacity-75" />
@@ -279,6 +308,63 @@ export default function LocationServicePage({ params }: Props) {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Related pages: keeps every service+city page reachable and passes link equity */}
+      <div className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+            More Drywall Services in {city.name}
+          </h2>
+          <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {otherServices.map((other) => (
+              <li key={other.slug}>
+                <Link
+                  href={locationServicePath(state.slug, city.slug, other.slug)}
+                  className="block rounded-lg bg-white px-4 py-3 text-blue-700 shadow-sm hover:bg-blue-50 hover:text-blue-800"
+                >
+                  {other.name} in {city.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {nearbyCities.length > 0 && (
+            <>
+              <h2 className="mt-12 text-2xl font-bold tracking-tight text-gray-900">
+                {service.name} Across {state.name}
+              </h2>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {nearbyCities.map((nearby) => (
+                  <li key={nearby.slug}>
+                    <Link
+                      href={locationServicePath(state.slug, nearby.slug, service.slug)}
+                      className="inline-block rounded-full border border-gray-200 bg-white px-4 py-1.5 text-sm text-gray-700 hover:border-blue-300 hover:text-blue-700"
+                    >
+                      {nearby.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          <p className="mt-10 text-gray-600">
+            Learn more about our{' '}
+            <Link href={`/services/${service.slug}/`} className="font-medium text-blue-700 hover:underline">
+              {service.name.toLowerCase()} service
+            </Link>
+            , see everything we do in{' '}
+            <Link href={`/locations/${state.slug}/${city.slug}/`} className="font-medium text-blue-700 hover:underline">
+              {city.name}
+            </Link>
+            , or browse all{' '}
+            <Link href={`/locations/${state.slug}/`} className="font-medium text-blue-700 hover:underline">
+              {state.name} service areas
+            </Link>
+            .
+          </p>
         </div>
       </div>
 

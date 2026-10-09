@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
     // Get email recipients from environment variables with fallbacks
     const primaryEmail = process.env.NOTIFICATION_EMAIL_PRIMARY || 'rodolfovergara14@gmail.com'
     const secondaryEmail = process.env.NOTIFICATION_EMAIL_SECONDARY
-    const fromEmail = process.env.FROM_EMAIL || 'noreply@wallfixpros.com'
+    const fromEmail = process.env.FROM_EMAIL || 'noreply@wallfixpro.com'
     const companyName = process.env.COMPANY_NAME || 'Wall Fix Pros'
 
     // Create list of recipients

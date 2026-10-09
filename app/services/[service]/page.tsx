@@ -4,6 +4,7 @@ import { CheckIcon, ClockIcon, CurrencyDollarIcon, ShieldCheckIcon } from '@hero
 import type { Metadata } from 'next'
 import servicesData from '@/data/services.json'
 import locationsData from '@/data/locations.json'
+import { clampDescription, serviceLabel, locationServicePath } from '@/lib/seo'
 
 type ServicePageProps = {
   params: { service: string }
@@ -26,9 +27,12 @@ export async function generateMetadata(
     }
   }
 
+  const label = serviceLabel(service.name)
+
   return {
-    title: `${service.name} Services | MD, VA, WV, PA`,
-    description: `Professional ${service.name.toLowerCase()} services in Maryland, Virginia, West Virginia, and Pennsylvania. ${service.shortDescription} Licensed, insured, and trusted since 2015 with 24/7 emergency service.`,
+    title: `${label} in MD, VA, WV & PA`,
+    description: clampDescription(`Professional ${service.name.toLowerCase()} in Maryland, Virginia, West Virginia and Pennsylvania. ${service.shortDescription} Licensed, insured, free estimates.`),
+    alternates: { canonical: `/services/${params.service}/` },
     keywords: [
       service.name.toLowerCase(),
       `${service.name.toLowerCase()} services`,
@@ -38,9 +42,10 @@ export async function generateMetadata(
       'Frederick MD'
     ],
     openGraph: {
-      title: `${service.name} Services | Wall Fix Pros`,
-      description: `Professional ${service.name.toLowerCase()} services. ${service.shortDescription}`,
-      url: `https://wallfixpros.com/services/${params.service}`,
+      images: ['/images/og-image.jpg'],
+      title: `${label} | Wall Fix Pros`,
+      description: `Professional ${service.name.toLowerCase()}. ${service.shortDescription}`,
+      url: `/services/${params.service}/`,
     },
   }
 }
@@ -52,18 +57,20 @@ export default function ServicePage({ params }: ServicePageProps) {
     notFound()
   }
 
-  // Get all cities for service area links
-  const allCities = Object.values(locationsData.states).flatMap(state => 
+  const label = serviceLabel(service.name)
+
+  // Every city we serve, linking to the canonical service+city page under /locations/.
+  const allCities = Object.entries(locationsData.states).flatMap(([stateSlug, state]) =>
     state.cities.map(citySlug => {
       const city = locationsData.cities[citySlug as keyof typeof locationsData.cities]
       return city ? {
         name: city.name,
-        state: city.state,
+        stateName: state.name,
         slug: citySlug,
-        href: `/services/${params.service}/${citySlug}-${params.service}`
+        href: locationServicePath(stateSlug, citySlug, params.service)
       } : null
     }).filter(Boolean)
-  ).slice(0, 12) // Show first 12 cities
+  )
 
   return (
     <div className="bg-white">
@@ -97,7 +104,7 @@ export default function ServicePage({ params }: ServicePageProps) {
         <div className="mx-auto max-w-4xl py-24 sm:py-32">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Professional {service.name} Services
+              Professional {label}
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               {service.longDescription}
@@ -229,7 +236,7 @@ export default function ServicePage({ params }: ServicePageProps) {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              {service.name} Services Available In
+              {label} Available In
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Professional {service.name.toLowerCase()} services throughout our service area
@@ -240,7 +247,7 @@ export default function ServicePage({ params }: ServicePageProps) {
             {allCities.map((city) => city && (
               <div key={city.slug} className="text-center p-4 border border-gray-200 rounded-lg hover:border-brand-blue-300 hover:shadow-sm transition-all">
                 <h3 className="font-semibold text-gray-900">{city.name}</h3>
-                <p className="text-sm text-gray-600 capitalize">{city.state.replace('-', ' ')}</p>
+                <p className="text-sm text-gray-600">{city.stateName}</p>
                 <Link
                   href={city.href}
                   className="mt-2 inline-block text-sm font-semibold text-brand-blue-600 hover:text-brand-blue-700"

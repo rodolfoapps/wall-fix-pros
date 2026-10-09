@@ -13,7 +13,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.wallfixpros.com'),
+  metadataBase: new URL('https://wallfixpro.com'),
   title: {
     default: 'Wall Fix Pros - Professional Drywall & Wall Repair Services | MD, VA, WV, PA',
     template: '%s | Wall Fix Pros'
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.wallfixpros.com',
+    url: 'https://wallfixpro.com',
     siteName: 'Wall Fix Pros',
     title: 'Wall Fix Pros - Professional Drywall & Wall Repair Services',
     description: 'Professional drywall installation, repair, and wall services in Maryland, Virginia, West Virginia, and Pennsylvania.',
@@ -54,11 +54,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Wall Fix Pros - Professional Drywall & Wall Repair Services',
     description: 'Professional drywall installation, repair, and wall services in Maryland, Virginia, West Virginia, and Pennsylvania.',
-    images: ['/images/twitter-image.jpg'],
+    images: ['/images/og-image.jpg'],
   },
-  verification: {
-    google: 'google-site-verification-code',
-  },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
 }
 
 export default function RootLayout({
@@ -71,7 +71,6 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://wallfixpros.com" />
         <meta name="theme-color" content="#2563eb" />
         <script
           type="application/ld+json"
@@ -80,7 +79,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "Wall Fix Pros",
-              "image": "https://wallfixpros.com/images/logo.jpg",
+              "@id": "https://wallfixpro.com/#business",
+              "image": "https://wallfixpro.com/images/og-image.jpg",
+              "logo": "https://wallfixpro.com/images/Assets/Logo-WALL-FIX-PRO.webp",
               "description": "Professional drywall installation, repair, and wall services",
               "address": {
                 "@type": "PostalAddress",
@@ -95,8 +96,9 @@ export default function RootLayout({
                 "latitude": 39.4143,
                 "longitude": -77.4105
               },
-              "telephone": "+1-301-555-0199",
-              "url": "https://www.wallfixpros.com",
+              "telephone": "+1-240-670-1949",
+              "email": "info@wallfixpro.com",
+              "url": "https://wallfixpro.com",
               "openingHours": [
                 "Mo-Fr 07:00-19:00",
                 "Sa 08:00-18:00", 

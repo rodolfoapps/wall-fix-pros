@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CalendarIcon, ClockIcon, UserIcon, CurrencyDollarIcon, CheckCircleIcon, XCircleIcon, ScaleIcon, CalculatorIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/patch-vs-replace-drywall-budget-decisions/' },
   title: 'When to Patch vs Replace: Smart Drywall Decisions for Budget-Conscious Homeowners',
   description: 'Make smart financial decisions about drywall repairs. Learn when patching makes sense vs when replacement is the better investment from Wall Fix Pros experts.',
 }
