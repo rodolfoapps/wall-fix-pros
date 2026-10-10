@@ -14,6 +14,7 @@ import ServiceIcon from '@/components/ServiceIcon'
 import ProcessSteps from '@/components/ProcessSteps'
 import FAQ from '@/components/FAQ'
 import CTABand from '@/components/CTABand'
+import Reviews from '@/components/Reviews'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -127,6 +128,8 @@ export default function HomePage() {
       </section>
 
       <ProcessSteps />
+
+      <Reviews />
 
       {/* Service areas */}
       <section className="bg-ink-900 text-white">

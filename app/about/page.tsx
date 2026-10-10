@@ -11,6 +11,7 @@ import TrustBar from '@/components/TrustBar'
 import ProcessSteps from '@/components/ProcessSteps'
 import FAQ from '@/components/FAQ'
 import CTABand from '@/components/CTABand'
+import Reviews from '@/components/Reviews'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/about/' },
@@ -86,6 +87,8 @@ export default function AboutPage() {
       </section>
 
       <ProcessSteps heading="How a job with us goes" intro="The same four steps whether you call about a doorknob hole or a flooded basement." />
+
+      <Reviews heading="Don’t take our word for it" limit={6} />
 
       {/* Where we work */}
       <section className="bg-ink-900 text-white">

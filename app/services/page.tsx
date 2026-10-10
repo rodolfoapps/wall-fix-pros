@@ -8,6 +8,7 @@ import CTABand from '@/components/CTABand'
 import TrustBar from '@/components/TrustBar'
 import PageHero from '@/components/PageHero'
 import QuoteMiniForm from '@/components/QuoteMiniForm'
+import Reviews from '@/components/Reviews'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services/' },
@@ -386,6 +387,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </div>
+
+      <Reviews tone="dark" limit={6} />
 
       {/* FAQ Section */}
       <div className="bg-gray-50 py-24 sm:py-32">

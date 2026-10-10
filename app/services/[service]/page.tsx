@@ -12,6 +12,7 @@ import TrustBar from '@/components/TrustBar'
 import FAQ from '@/components/FAQ'
 import CTABand from '@/components/CTABand'
 import ProcessSteps from '@/components/ProcessSteps'
+import Reviews from '@/components/Reviews'
 import { serviceFaqs } from '@/lib/faqs'
 import { processSteps } from '@/lib/processSteps'
 
@@ -195,6 +196,12 @@ export default function ServicePage({ params }: ServicePageProps) {
         heading={`How we handle your ${service.name.toLowerCase()} project`}
         intro={`Five steps, the same every time. The estimate you approve covers all of them.`}
         steps={processSteps[params.service] ?? service.process.map((step) => ({ title: step }))}
+      />
+
+      <Reviews
+        tone="dark"
+        service={params.service}
+        heading={`${service.name} customers, in their own words`}
       />
 
       {/* Service locations, grouped by state */}
