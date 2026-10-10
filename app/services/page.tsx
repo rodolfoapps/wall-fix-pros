@@ -388,7 +388,7 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      <Reviews tone="dark" limit={6} />
+      <Reviews tone="dark" limit={5} />
 
       {/* FAQ Section */}
       <div className="bg-gray-50 py-24 sm:py-32">
