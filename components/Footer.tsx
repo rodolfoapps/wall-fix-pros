@@ -74,7 +74,7 @@ export default function Footer() {
             {/* Certifications */}
             <div>
               <p className="text-sm text-gray-300">
-                {businessInfo.license} • {businessInfo.insurance}
+                {businessInfo.insurance}
               </p>
               <p className="text-sm text-gray-300">
                 Serving the area since {businessInfo.yearEstablished}

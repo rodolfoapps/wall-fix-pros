@@ -170,24 +170,7 @@ export default function ThankYouPage() {
       {/* Trust Badges */}
       <div className="bg-gray-50 py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">24/7</div>
-              <p className="mt-1 text-sm text-gray-600">Emergency Service</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">100%</div>
-              <p className="mt-1 text-sm text-gray-600">Satisfaction Guaranteed</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">33+</div>
-              <p className="mt-1 text-sm text-gray-600">Cities Served</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">Licensed</div>
-              <p className="mt-1 text-sm text-gray-600">& Insured Professionals</p>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

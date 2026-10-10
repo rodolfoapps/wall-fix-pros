@@ -37,7 +37,7 @@ export default function Header() {
         <div className={`flex w-full items-center justify-between transition-all duration-300 ease-in-out lg:border-none ${
           isScrolled 
             ? 'py-3 border-b-0' 
-            : 'py-6 border-b border-blue-500'
+            : 'py-6 border-b border-ink-200'
         }`}>
           <div className="flex items-center">
             <Link 

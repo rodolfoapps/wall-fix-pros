@@ -35,10 +35,10 @@ export default function ServicesPage() {
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Comprehensive drywall installation, repair, and wall services for residential and commercial properties throughout Maryland, Virginia, West Virginia, and Pennsylvania.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
               <Link
                 href="/quote"
-                className="rounded-md bg-brand-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-brand-orange-600"
+                className="btn-primary whitespace-nowrap"
               >
                 Get Free Quote
               </Link>
