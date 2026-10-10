@@ -6,6 +6,8 @@ import servicesData from '@/data/services.json'
 import { serviceImages } from '@/lib/images'
 import CTABand from '@/components/CTABand'
 import TrustBar from '@/components/TrustBar'
+import PageHero from '@/components/PageHero'
+import QuoteMiniForm from '@/components/QuoteMiniForm'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services/' },
@@ -25,33 +27,16 @@ export default function ServicesPage() {
 
   return (
     <div className="bg-white">
-      {/* Hero section */}
-      <div className="relative isolate px-6 pt-14 lg:px-8">
-        <div className="mx-auto max-w-4xl py-24 sm:py-32">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Professional Drywall & Wall Services
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Comprehensive drywall installation, repair, and wall services for residential and commercial properties throughout Maryland, Virginia, West Virginia, and Pennsylvania.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
-              <Link
-                href="/quote"
-                className="btn-primary whitespace-nowrap"
-              >
-                Get Free Quote
-              </Link>
-              <a 
-                href="tel:+12406701949" 
-                className="text-lg font-semibold leading-6 text-gray-900 hover:text-brand-blue-600"
-              >
-                Call: (240) 670-1949
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        src={serviceImages['drywall-taping'].hero}
+        alt={serviceImages['drywall-taping'].alt}
+        eyebrow={<span className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white ring-1 ring-white/20">10 services · 33 cities · one crew</span>}
+        title="Professional drywall & wall services"
+        subtitle="Installation, repair, taping, texture, ceilings, water damage, insulation and paint. Residential and light commercial across Maryland, Virginia, West Virginia and Pennsylvania."
+        aside={<QuoteMiniForm context="Services index" />}
+      >
+        <a href="tel:+12406701949" className="btn-primary">Call (240) 670-1949</a>
+      </PageHero>
 
       <TrustBar />
 

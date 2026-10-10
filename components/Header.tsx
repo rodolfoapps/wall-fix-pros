@@ -36,8 +36,8 @@ export default function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className={`flex w-full items-center justify-between transition-all duration-300 ease-in-out lg:border-none ${
           isScrolled 
-            ? 'py-3 border-b-0' 
-            : 'py-6 border-b border-ink-200'
+            ? 'py-3' 
+            : 'py-4 lg:py-6'
         }`}>
           <div className="flex items-center">
             <Link 
@@ -92,8 +92,15 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="flex lg:hidden">
+          {/* Mobile: call button + menu button on the same row as the logo */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <a
+              href="tel:+12406701949"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-500 text-white shadow-sm hover:bg-brand-600"
+              aria-label="Call (240) 670-1949"
+            >
+              <PhoneIcon className="h-5 w-5" aria-hidden="true" />
+            </a>
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 cursor-pointer hover:bg-gray-100 transition-colors duration-200"
@@ -105,26 +112,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile menu */}
-        <div className="py-4 lg:hidden">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <PhoneIcon className="h-5 w-5 text-orange-500" />
-              <a 
-                href="tel:+12406701949" 
-                className="ml-2 text-sm font-medium text-gray-900 cursor-pointer hover:text-blue-600 transition-colors duration-200"
-              >
-                (240) 670-1949
-              </a>
-            </div>
-            <Link
-              href="/quote"
-              className="inline-flex items-center rounded-md border border-transparent bg-orange-500 px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-orange-600 cursor-pointer transition-colors duration-200 select-none"
-            >
-              Get Quote
-            </Link>
-          </div>
-        </div>
       </nav>
 
       {/* Mobile menu overlay */}
@@ -159,6 +146,13 @@ export default function Header() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
+                  <a href="tel:+12406701949" className="btn-primary w-full" onClick={() => setMobileMenuOpen(false)}>
+                    <PhoneIcon className="h-5 w-5" aria-hidden="true" />
+                    Call (240) 670-1949
+                  </a>
+                  <Link href="/quote/" className="btn-outline w-full" onClick={() => setMobileMenuOpen(false)}>
+                    Get a free estimate
+                  </Link>
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
