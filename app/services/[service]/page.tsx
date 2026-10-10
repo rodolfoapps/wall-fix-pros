@@ -7,6 +7,12 @@ import locationsData from '@/data/locations.json'
 import { clampDescription, serviceLabel, locationServicePath } from '@/lib/seo'
 import { serviceImages } from '@/lib/images'
 import PageHero from '@/components/PageHero'
+import QuoteMiniForm from '@/components/QuoteMiniForm'
+import TrustBar from '@/components/TrustBar'
+import FAQ from '@/components/FAQ'
+import CTABand from '@/components/CTABand'
+import ProcessSteps from '@/components/ProcessSteps'
+import { serviceFaqs } from '@/lib/faqs'
 
 type ServicePageProps = {
   params: { service: string }
@@ -105,22 +111,18 @@ export default function ServicePage({ params }: ServicePageProps) {
       <PageHero
         src={image.hero}
         alt={image.alt}
+        eyebrow={<span className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white ring-1 ring-white/20">{service.priceRange} · {service.timeline}</span>}
         title={<>Professional {label}</>}
         subtitle={service.longDescription}
-        align="center"
+        aside={<QuoteMiniForm defaultService={params.service} context={`${service.name} hub page`} title={`Free ${service.name.toLowerCase()} estimate`} />}
       >
-        <div className="flex items-center justify-center gap-x-6">
-          <Link
-            href="/quote"
-            className="rounded-md bg-brand-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-brand-orange-600"
-          >
-            Get Free Quote
-          </Link>
-          <a href="tel:+12406701949" className="text-lg font-semibold leading-6 text-white hover:text-blue-100">
-            Call: (240) 670-1949
-          </a>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+          <a href="tel:+12406701949" className="btn-primary">Call (240) 670-1949</a>
+          <span className="text-sm text-ink-200">{service.warranty} · Licensed &amp; insured</span>
         </div>
       </PageHero>
+
+      <TrustBar />
 
       <div className="relative px-6 lg:px-8">
         {/* Key details */}
@@ -196,37 +198,10 @@ export default function ServicePage({ params }: ServicePageProps) {
         </div>
       </div>
 
-      {/* Process section */}
-      <div className="bg-gray-50 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-brand-orange-600">Our Process</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              How We Handle Your {service.name} Project
-            </p>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Our systematic approach ensures quality results and customer satisfaction on every project.
-            </p>
-          </div>
-          
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-            <div className="space-y-8">
-              {service.process.map((step, index) => (
-                <div key={step} className="relative flex items-start">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-blue-600 text-white font-semibold">
-                    {index + 1}
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      Step {index + 1}: {step}
-                    </h3>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      <ProcessSteps
+        heading={`How we handle your ${service.name.toLowerCase()} project`}
+        steps={service.process.map((step) => ({ title: step }))}
+      />
 
       {/* Service locations */}
       <div className="py-24 sm:py-32">
@@ -266,33 +241,9 @@ export default function ServicePage({ params }: ServicePageProps) {
         </div>
       </div>
 
-      {/* CTA section */}
-      <div className="bg-brand-blue-600">
-        <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready for Professional {service.name}?
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-              Get a free estimate for your {service.name.toLowerCase()} project. Our experienced team is ready to help.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                href="/quote"
-                className="rounded-md bg-white px-6 py-3 text-base font-semibold text-brand-blue-600 shadow-sm hover:bg-gray-50"
-              >
-                Get Free Quote
-              </Link>
-              <a
-                href="tel:+12406701949"
-                className="text-lg font-semibold leading-6 text-white hover:text-blue-100"
-              >
-                Call: (240) 670-1949
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FAQ items={serviceFaqs(service)} heading={`${service.name} questions`} />
+
+      <CTABand heading={`Need ${service.name.toLowerCase()}?`} text={`${service.warranty}. Free written estimate. ${service.timeline} on most jobs.`} />
     </div>
   )
 }

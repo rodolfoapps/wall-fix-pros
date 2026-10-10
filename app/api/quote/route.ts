@@ -18,6 +18,18 @@ export async function POST(request: NextRequest) {
     }
 
     const formData = await request.json()
+
+    // Honeypot: bots fill every field; humans never see this one.
+    if (formData.company) {
+      return NextResponse.json({ success: true }, { status: 200 })
+    }
+    const str = (v: unknown) => (typeof v === 'string' ? v.trim() : '')
+    if (!str(formData.firstName) || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(str(formData.email)) || str(formData.phone).replace(/\D/g, '').length < 7) {
+      return NextResponse.json(
+        { success: false, message: 'Please enter your name, a valid email and a phone number.' },
+        { status: 400 }
+      )
+    }
     const {
       firstName,
       lastName,

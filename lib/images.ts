@@ -104,6 +104,22 @@ export const aboutHero: SiteImage = {
   alt: 'Wall Fix Pros drywall crew unloading materials at a brick colonial home in Frederick, Maryland',
 }
 
+/** Flat icon per service, 256x256 WebP with the same copyright metadata as the photos. */
+export const serviceIcons: Record<string, { src: string; alt: string }> = Object.fromEntries(
+  Object.entries({
+    'drywall-installation': 'Drywall installation icon',
+    'drywall-repair': 'Drywall repair icon',
+    'drywall-patching': 'Drywall patching icon',
+    'drywall-taping': 'Drywall taping icon',
+    'drywall-texturing': 'Drywall texturing icon',
+    'drywall-restoration': 'Drywall restoration icon',
+    'ceiling-services': 'Ceiling services icon',
+    'insulation-services': 'Insulation services icon',
+    'water-damage-repair': 'Water damage repair icon',
+    'painting-services': 'Painting services icon',
+  }).map(([slug, alt]) => [slug, { src: `/images/icons/${slug}.webp`, alt }])
+)
+
 /** Alt text for a service image on a specific city page. */
 export function localizedServiceAlt(serviceSlug: string, cityName: string, stateAbbrev: string): string {
   const base = serviceImages[serviceSlug]?.alt ?? 'Professional drywall services'

@@ -3,6 +3,9 @@ import Link from 'next/link'
 import { MapPinIcon, ClockIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { stateImages } from '@/lib/images'
 import PageHero from '@/components/PageHero'
+import TrustBar from '@/components/TrustBar'
+import CTABand from '@/components/CTABand'
+import QuoteMiniForm from '@/components/QuoteMiniForm'
 import locationsData from '../../../data/locations.json'
 
 interface Props {
@@ -63,7 +66,10 @@ export default function StatePage({ params }: Props) {
         alt={`Drywall contractors serving ${state.name} – ${image.alt}`}
         title={<>Drywall Services in {state.name}</>}
         subtitle={state.description}
+        aside={<QuoteMiniForm context={`State page: ${state.name}`} title={`Free estimate in ${state.name}`} />}
       />
+
+      <TrustBar />
 
       {/* State Information */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -128,34 +134,7 @@ export default function StatePage({ params }: Props) {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="bg-blue-600">
-        <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready for Professional Drywall Service?
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-              Contact us today for a free estimate on your drywall project in {state.name}.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                href="/quote"
-                className="rounded-md bg-white px-6 py-3 text-base font-semibold text-blue-600 shadow-sm hover:bg-gray-50"
-              >
-                Get Free Quote
-              </Link>
-              <a
-                href="tel:+12406701949"
-                className="flex items-center text-lg font-semibold leading-6 text-white hover:text-blue-100"
-              >
-                <PhoneIcon className="h-5 w-5 mr-2" />
-                Call: (240) 670-1949
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CTABand heading={`Drywall contractors across ${state.name}`} />
     </div>
   )
 }

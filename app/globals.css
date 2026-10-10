@@ -2,15 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
-  
+
   body {
-    padding-top: 88px; /* Account for fixed header */
+    padding-top: 88px; /* fixed header */
+    color: theme('colors.ink.800');
+    background: #fff;
+  }
+
+  /* Phones get a sticky call bar at the bottom */
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: 68px;
+    }
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading), 'Barlow', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: theme('colors.brand.500');
+    color: #fff;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white shadow-sm hover:bg-brand-600;
+  }
+  .btn-light {
+    @apply btn bg-white text-ink-900 shadow-sm hover:bg-ink-100;
+  }
+  .btn-outline {
+    @apply btn border border-ink-300 bg-white text-ink-900 hover:border-ink-900;
+  }
+  .btn-ghost-light {
+    @apply btn text-white hover:text-ink-100;
+  }
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.18em] text-brand-600;
+  }
+  .section-title {
+    @apply text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl;
   }
 }
 

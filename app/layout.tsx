@@ -1,15 +1,23 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Barlow } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PerformanceOptimizations from '@/components/PerformanceOptimizations'
+import StickyCallBar from '@/components/StickyCallBar'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   preload: true,
   variable: '--font-inter'
+})
+
+const barlow = Barlow({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  display: 'swap',
+  variable: '--font-heading'
 })
 
 export const metadata: Metadata = {
@@ -67,11 +75,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${barlow.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <meta name="theme-color" content="#2563eb" />
+        <meta name="theme-color" content="#17191d" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -132,6 +140,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <StickyCallBar />
       </body>
     </html>
   )

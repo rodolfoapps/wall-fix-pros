@@ -16,6 +16,8 @@ interface PageHeroProps {
   align?: 'left' | 'center'
   /** 'tall' adds vertical room for landing-page heroes */
   size?: 'default' | 'tall'
+  /** Rendered in a right-hand column on large screens (estimate form, contact card) */
+  aside?: ReactNode
   className?: string
 }
 
@@ -33,12 +35,13 @@ export default function PageHero({
   priority = true,
   align = 'left',
   size = 'default',
+  aside,
   className = '',
 }: PageHeroProps) {
   const centered = align === 'center'
   const padding = size === 'tall' ? 'py-28 sm:py-40 lg:py-48' : 'py-24 sm:py-32'
   return (
-    <section className={`relative isolate overflow-hidden bg-brand-blue-900 ${className}`}>
+    <section className={`relative isolate overflow-hidden bg-ink-900 ${className}`}>
       <Image
         src={src}
         alt={alt}
@@ -49,16 +52,17 @@ export default function PageHero({
         className="object-cover"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-brand-blue-950/90 via-brand-blue-900/70 to-brand-blue-900/30"
+        className="absolute inset-0 bg-gradient-to-r from-ink-950/90 via-ink-900/75 to-ink-900/40"
         aria-hidden="true"
       />
       <div
         className={`relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${padding} ${
           centered ? 'text-center' : ''
-        }`}
+        } ${aside ? 'grid gap-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-center' : ''}`}
       >
+        <div>
         {eyebrow && (
-          <div className={`mb-4 flex items-center gap-3 text-blue-100 ${centered ? 'justify-center' : ''}`}>
+          <div className={`mb-4 flex items-center gap-3 text-ink-200 ${centered ? 'justify-center' : ''}`}>
             {eyebrow}
           </div>
         )}
@@ -66,11 +70,13 @@ export default function PageHero({
           {title}
         </h1>
         {subtitle && (
-          <p className={`mt-6 max-w-3xl text-lg leading-8 text-blue-50 sm:text-xl ${centered ? 'mx-auto' : ''}`}>
+          <p className={`mt-6 max-w-3xl text-lg leading-8 text-ink-100 sm:text-xl ${centered ? 'mx-auto' : ''}`}>
             {subtitle}
           </p>
         )}
         {children && <div className="mt-8">{children}</div>}
+        </div>
+        {aside && <div className="w-full">{aside}</div>}
       </div>
     </section>
   )

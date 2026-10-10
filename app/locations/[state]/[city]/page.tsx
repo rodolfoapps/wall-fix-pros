@@ -6,6 +6,10 @@ import servicesData from '../../../../data/services.json'
 import { clampDescription, locationServicePath } from '@/lib/seo'
 import { stateImages } from '@/lib/images'
 import PageHero from '@/components/PageHero'
+import QuoteMiniForm from '@/components/QuoteMiniForm'
+import TrustBar from '@/components/TrustBar'
+import CTABand from '@/components/CTABand'
+import ServiceIcon from '@/components/ServiceIcon'
 
 interface Props {
   params: { state: string; city: string }
@@ -83,6 +87,7 @@ export default function CityPage({ params }: Props) {
         }
         title={<>Drywall Services in {city.name}</>}
         subtitle={city.description}
+        aside={<QuoteMiniForm context={`City page: ${city.name}, ${state.abbreviation}`} title={`Free estimate in ${city.name}`} />}
       >
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-blue-100">
           <span className="flex items-center">
@@ -97,6 +102,8 @@ export default function CityPage({ params }: Props) {
           )}
         </div>
       </PageHero>
+
+      <TrustBar />
 
       {/* City Info */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -224,8 +231,9 @@ export default function CityPage({ params }: Props) {
 
           <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
-              <div key={service.slug} className="rounded-lg bg-white p-6 shadow-md">
-                <h3 className="text-xl font-bold text-gray-900">
+              <div key={service.slug} className="rounded-xl bg-white p-6 shadow-card ring-1 ring-ink-200">
+                <ServiceIcon slug={service.slug} size={48} />
+                <h3 className="mt-4 text-xl font-bold text-gray-900">
                   {service.name}
                 </h3>
                 <p className="mt-4 text-gray-600">{service.shortDescription}</p>
@@ -244,34 +252,7 @@ export default function CityPage({ params }: Props) {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="bg-blue-600">
-        <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready to Start Your Project?
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-              Contact us today for a free estimate on your drywall project in {city.name}, {state.abbreviation}.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                href="/quote"
-                className="rounded-md bg-white px-6 py-3 text-base font-semibold text-blue-600 shadow-sm hover:bg-gray-50"
-              >
-                Get Free Quote
-              </Link>
-              <a
-                href="tel:+12406701949"
-                className="flex items-center text-lg font-semibold leading-6 text-white hover:text-blue-100"
-              >
-                <PhoneIcon className="h-5 w-5 mr-2" />
-                Call: (240) 670-1949
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CTABand heading={`Drywall help in ${city.name}, ${state.abbreviation}`} text={`Response time ${city.responseTime.toLowerCase()}. Free written estimates on every job.`} />
     </div>
   )
 }

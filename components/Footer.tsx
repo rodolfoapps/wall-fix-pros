@@ -184,7 +184,7 @@ export default function Footer() {
           <div className="md:flex md:items-center md:justify-between">
             <div className="flex space-x-6 md:order-2">
               <p className="text-xs leading-5 text-gray-500">
-                Licensed & Insured • MHIC #123456
+                Licensed &amp; Insured
               </p>
             </div>
             <p className="mt-8 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">

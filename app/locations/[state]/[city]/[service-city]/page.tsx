@@ -6,6 +6,11 @@ import servicesData from '../../../../../data/services.json'
 import { clampDescription, locationServicePath, serviceLabel } from '@/lib/seo'
 import { serviceImages, localizedServiceAlt } from '@/lib/images'
 import PageHero from '@/components/PageHero'
+import QuoteMiniForm from '@/components/QuoteMiniForm'
+import TrustBar from '@/components/TrustBar'
+import FAQ from '@/components/FAQ'
+import CTABand from '@/components/CTABand'
+import { serviceFaqs } from '@/lib/faqs'
 
 interface Props {
   params: { state: string; city: string; 'service-city': string }
@@ -128,21 +133,19 @@ export default function LocationServicePage({ params }: Props) {
               : ' Quality craftsmanship with the same professional standards we maintain throughout our service area.'}
           </>
         }
+        aside={<QuoteMiniForm defaultService={serviceSlug} context={`${service.name} in ${city.name}, ${state.abbreviation}`} title={`Free estimate in ${city.name}`} />}
       >
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-blue-100">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-ink-200">
           <span className="flex items-center">
             <ClockIcon className="mr-2 h-5 w-5" />
             Response: {city.responseTime}
           </span>
           <span className="font-medium">{service.priceRange}</span>
-          <Link
-            href="/quote"
-            className="rounded-md bg-brand-orange-500 px-5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-brand-orange-600"
-          >
-            Get Free Quote
-          </Link>
+          <a href="tel:+12406701949" className="btn-primary py-2.5">Call (240) 670-1949</a>
         </div>
       </PageHero>
+
+      <TrustBar />
 
       {/* Service & Location Details */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -375,35 +378,9 @@ export default function LocationServicePage({ params }: Props) {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="bg-blue-600">
-        <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Professional {service.name} in {city.name}
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-              Contact Wall Fix Pros today for expert {service.name.toLowerCase()} services in {city.name}, {state.abbreviation}. 
-              {city.isHeadquarters ? ' Headquarters location with priority scheduling available.' : ''}
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                href="/quote"
-                className="rounded-md bg-white px-6 py-3 text-base font-semibold text-blue-600 shadow-sm hover:bg-gray-50"
-              >
-                Get Free Quote
-              </Link>
-              <a
-                href="tel:+12406701949"
-                className="flex items-center text-lg font-semibold leading-6 text-white hover:text-blue-100"
-              >
-                <PhoneIcon className="h-5 w-5 mr-2" />
-                Call: (240) 670-1949
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FAQ items={serviceFaqs(service, city.name)} heading={`${service.name} in ${city.name}: common questions`} />
+
+      <CTABand heading={`${service.name} in ${city.name}, ${state.abbreviation}`} text={`${city.isHeadquarters ? 'Headquarters city: fastest response in our service area.' : `Typical response ${city.responseTime.toLowerCase()}.`} Free written estimate, ${service.warranty.toLowerCase()}.`} />
     </div>
   )
 }

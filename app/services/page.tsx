@@ -4,6 +4,8 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 import servicesData from '@/data/services.json'
 import { serviceImages } from '@/lib/images'
+import CTABand from '@/components/CTABand'
+import TrustBar from '@/components/TrustBar'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services/' },
@@ -50,6 +52,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </div>
+
+      <TrustBar />
 
       {/* Services grid */}
       <div className="py-24 sm:py-32">
@@ -151,7 +155,7 @@ export default function ServicesPage() {
                   <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange-500">
                     <CheckIcon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
-                  Licensed & Insured (MHIC #123456)
+                  Licensed &amp; insured in MD, VA, WV and PA
                 </dt>
                 <dd className="mt-2 text-base leading-7 text-gray-600">
                   Fully licensed and insured for your peace of mind on every project.
@@ -452,33 +456,7 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* CTA section */}
-      <div className="bg-brand-blue-600">
-        <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready to get started?
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-              Contact us today for a free estimate on any of our professional drywall and wall services across Maryland, Virginia, West Virginia, and Pennsylvania.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                href="/quote"
-                className="rounded-md bg-white px-6 py-3 text-base font-semibold text-brand-blue-600 shadow-sm hover:bg-gray-50"
-              >
-                Get Free Quote
-              </Link>
-              <a
-                href="tel:+12406701949"
-                className="text-lg font-semibold leading-6 text-white hover:text-blue-100"
-              >
-                Call: (240) 670-1949
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CTABand heading="Not sure which service you need?" text="Send a photo or describe the damage. We will tell you what it takes and what it costs, free." />
     </div>
   )
 }
