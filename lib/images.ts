@@ -104,6 +104,29 @@ export const aboutHero: SiteImage = {
   alt: 'Wall Fix Pros drywall crew unloading materials at a brick colonial home in Frederick, Maryland',
 }
 
+export const resourceImages: Record<string, SiteImage> = {
+  'drywall-repair-guide': {
+    hero: '/images/resources/drywall-repair-guide-hero.webp',
+    card: '/images/resources/drywall-repair-guide-card.webp',
+    alt: 'Common drywall damage types on one wall: a doorknob hole, a stress crack, a popped nail and a dent',
+  },
+  'maintenance-tips': {
+    hero: '/images/resources/maintenance-tips-hero.webp',
+    card: '/images/resources/maintenance-tips-card.webp',
+    alt: 'Homeowner wiping a smooth painted wall during routine drywall maintenance',
+  },
+  'emergency-response': {
+    hero: '/images/resources/emergency-response-hero.webp',
+    card: '/images/resources/emergency-response-card.webp',
+    alt: 'Sagging water-damaged ceiling drywall dripping into a bucket, a drywall emergency',
+  },
+  'quality-standards': {
+    hero: '/images/resources/quality-standards-hero.webp',
+    card: '/images/resources/quality-standards-card.webp',
+    alt: 'Straightedge and level held against a perfectly smooth finished drywall wall under raking light',
+  },
+}
+
 /** Flat icon per service, 256x256 WebP with the same copyright metadata as the photos. */
 export const serviceIcons: Record<string, { src: string; alt: string }> = Object.fromEntries(
   Object.entries({

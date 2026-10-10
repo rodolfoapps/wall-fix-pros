@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import ArticleHero from '@/components/ArticleHero'
+import ArticleFooter from '@/components/ArticleFooter'
 import Link from 'next/link'
-import { CalendarIcon, ClockIcon, UserIcon, CurrencyDollarIcon, CheckCircleIcon, XCircleIcon, ScaleIcon, CalculatorIcon } from '@heroicons/react/24/outline'
+import { CurrencyDollarIcon, CheckCircleIcon, XCircleIcon, ScaleIcon, CalculatorIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/patch-vs-replace-drywall-budget-decisions/' },
@@ -215,38 +217,8 @@ export default function PatchVsReplacePage() {
   return (
     <div className="bg-white">
       {/* Article Header */}
-      <div className="relative bg-purple-700">
-        <div className="absolute inset-0 bg-purple-700 opacity-75" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800 mb-4">
-              Decision Guide
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              When to Patch vs Replace: Smart Drywall Decisions for Budget-Conscious Homeowners
-            </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-xl text-purple-100">
-              Make informed financial decisions about drywall repairs. Learn when patching saves money and when replacement is the smarter long-term investment.
-            </p>
-            <div className="mt-8 flex items-center justify-center space-x-6 text-purple-100">
-              <div className="flex items-center">
-                <UserIcon className="h-5 w-5 mr-2" />
-                <span>Wall Fix Pros Expert Team</span>
-              </div>
-              <div className="flex items-center">
-                <CalendarIcon className="h-5 w-5 mr-2" />
-                <span>November 22, 2024</span>
-              </div>
-              <div className="flex items-center">
-                <ClockIcon className="h-5 w-5 mr-2" />
-                <span>11 min read</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ArticleHero slug="patch-vs-replace-drywall-budget-decisions" />
 
-      {/* Article Content */}
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Introduction */}
         <div className="prose max-w-none">
@@ -638,6 +610,7 @@ export default function PatchVsReplacePage() {
           </div>
         </section>
       </div>
+      <ArticleFooter slug="patch-vs-replace-drywall-budget-decisions" />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
+import ArticleHero from '@/components/ArticleHero'
+import ArticleFooter from '@/components/ArticleFooter'
 import Link from 'next/link'
-import { CalendarIcon, ClockIcon, UserIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/drywall-repair-costs-2025-maryland-virginia-pennsylvania/' },
@@ -11,22 +12,7 @@ export const metadata: Metadata = {
 export default function DrywallCosts2025Page() {
   return (
     <div className="bg-white">
-      <div className="relative bg-green-700">
-        <div className="absolute inset-0 bg-green-700 opacity-75" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 mb-4">
-              Pricing Guide
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              2025 Drywall Repair Costs in Maryland, Virginia, and Pennsylvania
-            </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-xl text-green-100">
-              Comprehensive 2025 pricing guide for drywall repairs across our service areas. Get accurate cost estimates and budget planning information.
-            </p>
-          </div>
-        </div>
-      </div>
+      <ArticleHero slug="drywall-repair-costs-2025-maryland-virginia-pennsylvania" />
 
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="prose max-w-none">
@@ -94,6 +80,7 @@ export default function DrywallCosts2025Page() {
           </div>
         </div>
       </div>
+      <ArticleFooter slug="drywall-repair-costs-2025-maryland-virginia-pennsylvania" />
     </div>
   )
 }

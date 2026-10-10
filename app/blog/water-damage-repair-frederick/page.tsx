@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
+import ArticleHero from '@/components/ArticleHero'
+import ArticleFooter from '@/components/ArticleFooter'
 import Link from 'next/link'
-import { CalendarIcon, ClockIcon, UserIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/water-damage-repair-frederick/' },
@@ -11,36 +12,7 @@ export const metadata: Metadata = {
 export default function WaterDamageFrederickPage() {
   return (
     <div className="bg-white">
-      <div className="relative bg-red-700">
-        <div className="absolute inset-0 bg-red-700 opacity-75" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800 mb-4">
-              Water Damage
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Water Damage Drywall Repair: Frederick Homeowners Guide
-            </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-xl text-red-100">
-              Essential information for Frederick homeowners dealing with water damage to drywall.
-            </p>
-            <div className="mt-8 flex items-center justify-center space-x-6 text-red-100">
-              <div className="flex items-center">
-                <UserIcon className="h-5 w-5 mr-2" />
-                <span>Wall Fix Pros</span>
-              </div>
-              <div className="flex items-center">
-                <CalendarIcon className="h-5 w-5 mr-2" />
-                <span>December 12, 2024</span>
-              </div>
-              <div className="flex items-center">
-                <ClockIcon className="h-5 w-5 mr-2" />
-                <span>12 min read</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ArticleHero slug="water-damage-repair-frederick" />
 
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="prose max-w-none">
@@ -145,6 +117,7 @@ export default function WaterDamageFrederickPage() {
           </div>
         </div>
       </div>
+      <ArticleFooter slug="water-damage-repair-frederick" />
     </div>
   )
 }

@@ -1,4 +1,7 @@
 import type { Metadata } from 'next'
+import PageHero from '@/components/PageHero'
+import CTABand from '@/components/CTABand'
+import { resourceImages } from '@/lib/images'
 import Link from 'next/link'
 import { ExclamationTriangleIcon, PhoneIcon, ClockIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
 
@@ -182,30 +185,13 @@ export default function EmergencyResponsePage() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative bg-red-700">
-        <div className="absolute inset-0 bg-red-700 opacity-75" />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="flex items-center mb-6">
-            <div className="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold mr-4 animate-pulse">
-              24/7 EMERGENCY SERVICE
-            </div>
-            <a
-              href="tel:+12406701949"
-              className="text-red-100 hover:text-white font-medium flex items-center"
-            >
-              <PhoneIcon className="h-5 w-5 mr-2" />
-              (240) 670-1949
-            </a>
-          </div>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Emergency Drywall Response Guide
-          </h1>
-          <p className="mt-6 max-w-3xl text-xl text-red-100">
-            When drywall emergencies strike, quick response is critical. Follow our expert emergency guide and contact Wall Fix Pros for immediate professional assistance.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        src={resourceImages['emergency-response'].hero}
+        alt={resourceImages['emergency-response'].alt}
+        eyebrow={<span className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white ring-1 ring-white/20">Homeowner resource</span>}
+        title="Emergency Drywall Response Guide"
+        subtitle="When drywall emergencies strike, quick response is critical. Follow our expert emergency guide and contact Wall Fix Pros for immediate professional assistance."
+      />
 
       {/* Emergency Types */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -419,6 +405,7 @@ export default function EmergencyResponsePage() {
           </div>
         </div>
       </div>
+      <CTABand heading="Rather have us look at it?" text="Free written estimate. We tell you what it needs and what it costs, then you decide." />
     </div>
   )
 }

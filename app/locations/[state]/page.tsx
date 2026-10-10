@@ -6,6 +6,11 @@ import PageHero from '@/components/PageHero'
 import TrustBar from '@/components/TrustBar'
 import CTABand from '@/components/CTABand'
 import QuoteMiniForm from '@/components/QuoteMiniForm'
+import ServiceIcon from '@/components/ServiceIcon'
+import FAQ from '@/components/FAQ'
+import servicesData from '../../../data/services.json'
+import { locationFaqs, serviceFaqs } from '@/lib/faqs'
+import { locationServicePath } from '@/lib/seo'
 import locationsData from '../../../data/locations.json'
 
 interface Props {
@@ -133,6 +138,27 @@ export default function StatePage({ params }: Props) {
           </div>
         </div>
       </div>
+
+      {/* Services available statewide */}
+      <section className="bg-ink-50">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <p className="eyebrow">Services</p>
+          <h2 className="mt-2 section-title">What we do across {state.name}</h2>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {Object.values(servicesData).map((service) => (
+              <li key={service.slug}>
+                <Link href={locationServicePath(state.slug, state.cities[0], service.slug)} className="group flex h-full flex-col rounded-xl bg-white p-4 shadow-card ring-1 ring-ink-200 hover:ring-brand-400">
+                  <ServiceIcon slug={service.slug} size={44} />
+                  <h3 className="mt-3 font-bold text-ink-900 group-hover:text-brand-600">{service.name}</h3>
+                  <p className="mt-1 text-xs text-ink-500">{service.priceRange}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <FAQ items={locationFaqs(state.name)} heading={`Drywall questions from ${state.name} homeowners`} />
 
       <CTABand heading={`Drywall contractors across ${state.name}`} />
     </div>

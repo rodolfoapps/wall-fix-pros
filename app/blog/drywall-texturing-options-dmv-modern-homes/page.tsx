@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import ArticleHero from '@/components/ArticleHero'
+import ArticleFooter from '@/components/ArticleFooter'
 import Link from 'next/link'
-import { CalendarIcon, ClockIcon, UserIcon, SwatchIcon, PaintBrushIcon, CheckCircleIcon, XCircleIcon, StarIcon } from '@heroicons/react/24/outline'
+import { SwatchIcon, PaintBrushIcon, CheckCircleIcon, XCircleIcon, StarIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/drywall-texturing-options-dmv-modern-homes/' },
@@ -252,38 +254,8 @@ export default function DrywallTexturingOptionsPage() {
   return (
     <div className="bg-white">
       {/* Article Header */}
-      <div className="relative bg-indigo-700">
-        <div className="absolute inset-0 bg-indigo-700 opacity-75" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 mb-4">
-              Texturing Guide
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Drywall Texturing Options: Popular Choices for Modern Homes in the DMV Area
-            </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-xl text-indigo-100">
-              Discover the latest drywall texturing trends in the DMV area. From smooth contemporary finishes to artistic specialty textures, learn costs, techniques, and what's popular in today's market.
-            </p>
-            <div className="mt-8 flex items-center justify-center space-x-6 text-indigo-100">
-              <div className="flex items-center">
-                <UserIcon className="h-5 w-5 mr-2" />
-                <span>Wall Fix Pros Expert Team</span>
-              </div>
-              <div className="flex items-center">
-                <CalendarIcon className="h-5 w-5 mr-2" />
-                <span>November 20, 2024</span>
-              </div>
-              <div className="flex items-center">
-                <ClockIcon className="h-5 w-5 mr-2" />
-                <span>13 min read</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ArticleHero slug="drywall-texturing-options-dmv-modern-homes" />
 
-      {/* Article Content */}
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Introduction */}
         <div className="prose max-w-none">
@@ -694,6 +666,7 @@ export default function DrywallTexturingOptionsPage() {
           </div>
         </section>
       </div>
+      <ArticleFooter slug="drywall-texturing-options-dmv-modern-homes" />
     </div>
   )
 }

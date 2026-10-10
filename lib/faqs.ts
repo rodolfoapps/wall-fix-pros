@@ -46,3 +46,17 @@ export function serviceFaqs(service: { name: string; priceRange: string; timelin
     },
   ]
 }
+
+/** Location FAQs: same questions a homeowner in that city would ask, answered for that city. */
+export function locationFaqs(place: string, opts: { headquarters?: boolean; responseTime?: string } = {}): FaqItem[] {
+  const arrive = opts.headquarters
+    ? `${place} is our home base, so we are usually on site the same day and within the hour for emergencies.`
+    : `We typically schedule ${place} within 24 to 48 hours${opts.responseTime ? `, with a usual response time of ${opts.responseTime.toLowerCase()}` : ''}. Active leaks and ceiling sags are treated as same-day.`
+  return [
+    { q: `How soon can you get to ${place}?`, a: arrive },
+    { q: `Do you charge extra to come out to ${place}?`, a: `No. There is no travel fee anywhere in our service area, and the estimate itself is free. The written price covers the whole job.` },
+    { q: `What drywall work do you do in ${place}?`, a: `Everything from a single hole to a full basement: repair, patching, taping and finishing, texture matching, ceilings, water damage, insulation and painting. Residential and light commercial.` },
+    { q: `Are you licensed and insured to work in ${place}?`, a: `Yes. We carry general liability and workers compensation coverage and provide certificates before work starts.` },
+    { q: `Can I get a price without a visit?`, a: `Often, yes. Send a photo of the damage with a rough size and we will give you a range the same day. Larger jobs get a free on-site estimate so the number is firm.` },
+  ]
+}

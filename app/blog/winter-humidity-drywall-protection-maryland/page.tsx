@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import ArticleHero from '@/components/ArticleHero'
+import ArticleFooter from '@/components/ArticleFooter'
 import Link from 'next/link'
-import { CalendarIcon, ClockIcon, UserIcon, ExclamationTriangleIcon, CheckCircleIcon, CloudIcon } from '@heroicons/react/24/outline'
+import { ExclamationTriangleIcon, CheckCircleIcon, CloudIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/winter-humidity-drywall-protection-maryland/' },
@@ -206,38 +208,8 @@ export default function WinterHumidityDrywallPage() {
   return (
     <div className="bg-white">
       {/* Article Header */}
-      <div className="relative bg-blue-700">
-        <div className="absolute inset-0 bg-blue-700 opacity-75" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
-              Maintenance Guide
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Winter Humidity and Your Drywall: Protecting Your Maryland Home
-            </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-xl text-blue-100">
-              Maryland's winter climate creates unique challenges for drywall and interior surfaces. Learn proven strategies to protect your home from moisture damage during the cold months.
-            </p>
-            <div className="mt-8 flex items-center justify-center space-x-6 text-blue-100">
-              <div className="flex items-center">
-                <UserIcon className="h-5 w-5 mr-2" />
-                <span>Wall Fix Pros Expert Team</span>
-              </div>
-              <div className="flex items-center">
-                <CalendarIcon className="h-5 w-5 mr-2" />
-                <span>November 30, 2024</span>
-              </div>
-              <div className="flex items-center">
-                <ClockIcon className="h-5 w-5 mr-2" />
-                <span>12 min read</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ArticleHero slug="winter-humidity-drywall-protection-maryland" />
 
-      {/* Article Content */}
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Introduction */}
         <div className="prose max-w-none">
@@ -624,6 +596,7 @@ export default function WinterHumidityDrywallPage() {
           </div>
         </section>
       </div>
+      <ArticleFooter slug="winter-humidity-drywall-protection-maryland" />
     </div>
   )
 }

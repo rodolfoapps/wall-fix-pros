@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import ArticleHero from '@/components/ArticleHero'
+import ArticleFooter from '@/components/ArticleFooter'
 import Link from 'next/link'
-import { CalendarIcon, ClockIcon, UserIcon, WrenchScrewdriverIcon, CheckCircleIcon, ExclamationTriangleIcon, AcademicCapIcon, BeakerIcon } from '@heroicons/react/24/outline'
+import { WrenchScrewdriverIcon, CheckCircleIcon, ExclamationTriangleIcon, AcademicCapIcon, BeakerIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/complete-guide-drywall-taping-finishing-techniques/' },
@@ -361,38 +363,8 @@ export default function DrywallTapingFinishingGuidePage() {
   return (
     <div className="bg-white">
       {/* Article Header */}
-      <div className="relative bg-teal-700">
-        <div className="absolute inset-0 bg-teal-700 opacity-75" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-teal-100 text-teal-800 mb-4">
-              Professional Techniques
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              The Complete Guide to Drywall Taping and Finishing: Professional Tips and Techniques
-            </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-xl text-teal-100">
-              Master the art of professional drywall finishing. Comprehensive guide covering techniques, quality standards, and expert tips used by Wall Fix Pros in thousands of successful projects.
-            </p>
-            <div className="mt-8 flex items-center justify-center space-x-6 text-teal-100">
-              <div className="flex items-center">
-                <UserIcon className="h-5 w-5 mr-2" />
-                <span>Wall Fix Pros Master Craftsmen</span>
-              </div>
-              <div className="flex items-center">
-                <CalendarIcon className="h-5 w-5 mr-2" />
-                <span>November 18, 2024</span>
-              </div>
-              <div className="flex items-center">
-                <ClockIcon className="h-5 w-5 mr-2" />
-                <span>18 min read</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ArticleHero slug="complete-guide-drywall-taping-finishing-techniques" />
 
-      {/* Article Content */}
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Introduction */}
         <div className="prose max-w-none">
@@ -834,6 +806,7 @@ export default function DrywallTapingFinishingGuidePage() {
           </div>
         </section>
       </div>
+      <ArticleFooter slug="complete-guide-drywall-taping-finishing-techniques" />
     </div>
   )
 }

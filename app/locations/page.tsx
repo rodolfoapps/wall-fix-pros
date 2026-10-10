@@ -1,4 +1,10 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import PageHero from '@/components/PageHero'
+import TrustBar from '@/components/TrustBar'
+import CTABand from '@/components/CTABand'
+import QuoteMiniForm from '@/components/QuoteMiniForm'
+import { stateImages } from '@/lib/images'
 import Link from 'next/link'
 import { MapPinIcon, ChevronRightIcon, StarIcon } from '@heroicons/react/24/outline'
 import locationsData from '../../data/locations.json'
@@ -29,18 +35,15 @@ export default function LocationsPage() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative bg-blue-700">
-        <div className="absolute inset-0 bg-blue-700 opacity-75" />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Our Service Areas
-          </h1>
-          <p className="mt-6 max-w-3xl text-xl text-blue-100">
-            Professional drywall repair services across 33 cities in Maryland, Virginia, West Virginia, and Pennsylvania. Click any location for local service details.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        src={stateImages.maryland.hero}
+        alt={stateImages.maryland.alt}
+        title="Drywall contractors in 33 cities across four states"
+        subtitle="Headquartered in Frederick, MD. Same-day service around Frederick, 24 to 48 hours across Maryland, Northern Virginia, the Eastern Panhandle and south-central Pennsylvania."
+        aside={<QuoteMiniForm context="Locations index" />}
+      />
+
+      <TrustBar />
 
       {/* States Overview */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -56,7 +59,11 @@ export default function LocationsPage() {
         {/* States Grid with Links */}
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
           {states.map((state) => (
-            <div key={state.slug} className="rounded-lg border border-gray-200 p-8 hover:shadow-lg transition-shadow duration-200">
+            <div key={state.slug} className="overflow-hidden rounded-xl bg-white shadow-card ring-1 ring-ink-200">
+              <Link href={`/locations/${state.slug}`} className="relative block aspect-[3/1]">
+                <Image src={stateImages[state.slug].hero} alt={stateImages[state.slug].alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+              </Link>
+              <div className="p-8">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-2xl font-bold text-blue-700">
                   <Link 
@@ -119,6 +126,7 @@ export default function LocationsPage() {
                   View all {state.name} services
                   <ChevronRightIcon className="h-4 w-4 ml-1" />
                 </Link>
+              </div>
               </div>
             </div>
           ))}
@@ -187,6 +195,7 @@ export default function LocationsPage() {
           </div>
         </div>
       </div>
+      <CTABand heading="Not sure if we cover your area?" text="If you are within about 50 miles of Frederick, MD, we almost certainly do. Call and ask." />
     </div>
   )
 }

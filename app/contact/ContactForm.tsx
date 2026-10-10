@@ -66,21 +66,7 @@ export default function ContactForm() {
 
   return (
     <div className="bg-white">
-      {/* Hero section */}
-      <div className="bg-gradient-to-br from-blue-600 to-blue-800 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-              Get In Touch
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-blue-100">
-              Ready to start your drywall project? Contact us for a free estimate or consultation.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-x-8 gap-y-24 lg:grid-cols-2">
             {/* Contact information */}

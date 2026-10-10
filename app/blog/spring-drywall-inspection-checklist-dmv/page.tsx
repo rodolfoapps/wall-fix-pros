@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import ArticleHero from '@/components/ArticleHero'
+import ArticleFooter from '@/components/ArticleFooter'
 import Link from 'next/link'
-import { CalendarIcon, ClockIcon, UserIcon, CheckCircleIcon, ExclamationTriangleIcon, MagnifyingGlassIcon, DocumentCheckIcon } from '@heroicons/react/24/outline'
+import { CheckCircleIcon, ExclamationTriangleIcon, MagnifyingGlassIcon, DocumentCheckIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/spring-drywall-inspection-checklist-dmv/' },
@@ -245,38 +247,8 @@ export default function SpringDrywallInspectionPage() {
   return (
     <div className="bg-white">
       {/* Article Header */}
-      <div className="relative bg-green-700">
-        <div className="absolute inset-0 bg-green-700 opacity-75" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 mb-4">
-              Maintenance Guide
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Spring Home Maintenance: Drywall Inspection Checklist for DMV Homeowners
-            </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-xl text-green-100">
-              Comprehensive spring inspection guide for DC Metro area homeowners. Catch drywall problems early, save on repairs, and maintain your home's value with professional insights.
-            </p>
-            <div className="mt-8 flex items-center justify-center space-x-6 text-green-100">
-              <div className="flex items-center">
-                <UserIcon className="h-5 w-5 mr-2" />
-                <span>Wall Fix Pros Expert Team</span>
-              </div>
-              <div className="flex items-center">
-                <CalendarIcon className="h-5 w-5 mr-2" />
-                <span>November 28, 2024</span>
-              </div>
-              <div className="flex items-center">
-                <ClockIcon className="h-5 w-5 mr-2" />
-                <span>12 min read</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ArticleHero slug="spring-drywall-inspection-checklist-dmv" />
 
-      {/* Article Content */}
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Introduction */}
         <div className="prose max-w-none">
@@ -727,6 +699,7 @@ export default function SpringDrywallInspectionPage() {
           </div>
         </section>
       </div>
+      <ArticleFooter slug="spring-drywall-inspection-checklist-dmv" />
     </div>
   )
 }

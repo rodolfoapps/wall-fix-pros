@@ -10,6 +10,8 @@ import QuoteMiniForm from '@/components/QuoteMiniForm'
 import TrustBar from '@/components/TrustBar'
 import CTABand from '@/components/CTABand'
 import ServiceIcon from '@/components/ServiceIcon'
+import FAQ from '@/components/FAQ'
+import { locationFaqs } from '@/lib/faqs'
 
 interface Props {
   params: { state: string; city: string }
@@ -251,6 +253,8 @@ export default function CityPage({ params }: Props) {
           </div>
         </div>
       </div>
+
+      <FAQ items={locationFaqs(`${city.name}, ${state.abbreviation}`, { headquarters: city.isHeadquarters, responseTime: city.responseTime })} heading={`Drywall questions from ${city.name} homeowners`} />
 
       <CTABand heading={`Drywall help in ${city.name}, ${state.abbreviation}`} text={`Response time ${city.responseTime.toLowerCase()}. Free written estimates on every job.`} />
     </div>

@@ -1,4 +1,7 @@
 import type { Metadata } from 'next'
+import PageHero from '@/components/PageHero'
+import CTABand from '@/components/CTABand'
+import { resourceImages } from '@/lib/images'
 import Link from 'next/link'
 import { ShieldCheckIcon, CheckCircleIcon, StarIcon, TrophyIcon } from '@heroicons/react/24/outline'
 
@@ -230,22 +233,13 @@ export default function QualityStandardsPage() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative bg-green-700">
-        <div className="absolute inset-0 bg-green-700 opacity-75" />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="flex items-center mb-6">
-            <TrophyIcon className="h-8 w-8 text-yellow-400 mr-3" />
-            <span className="text-green-100 font-medium">Award-Winning Quality</span>
-          </div>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Quality Standards & Guarantees
-          </h1>
-          <p className="mt-6 max-w-3xl text-xl text-green-100">
-            At Wall Fix Pros, quality isn't just a goal—it's our foundation. Learn about our rigorous standards, professional certifications, and comprehensive warranty coverage.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        src={resourceImages['quality-standards'].hero}
+        alt={resourceImages['quality-standards'].alt}
+        eyebrow={<span className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white ring-1 ring-white/20">Homeowner resource</span>}
+        title="Quality Standards & Guarantees"
+        subtitle="At Wall Fix Pros, quality isn't just a goal—it's our foundation. Learn about our rigorous standards, professional certifications, and comprehensive warranty coverage."
+      />
 
       {/* Quality Standards */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -472,6 +466,7 @@ export default function QualityStandardsPage() {
           </div>
         </div>
       </div>
+      <CTABand heading="Rather have us look at it?" text="Free written estimate. We tell you what it needs and what it costs, then you decide." />
     </div>
   )
 }

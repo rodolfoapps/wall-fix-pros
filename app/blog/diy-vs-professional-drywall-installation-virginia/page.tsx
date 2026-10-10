@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import ArticleHero from '@/components/ArticleHero'
+import ArticleFooter from '@/components/ArticleFooter'
 import Link from 'next/link'
-import { CalendarIcon, ClockIcon, UserIcon, CurrencyDollarIcon, CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/outline'
+import { ClockIcon, CurrencyDollarIcon, CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/diy-vs-professional-drywall-installation-virginia/' },
@@ -179,38 +181,8 @@ export default function DIYvsProfessionalPage() {
   return (
     <div className="bg-white">
       {/* Article Header */}
-      <div className="relative bg-green-700">
-        <div className="absolute inset-0 bg-green-700 opacity-75" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 mb-4">
-              Installation Guide
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              DIY vs Professional Drywall Installation: Why Virginia Homeowners Choose Pros
-            </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-xl text-green-100">
-              A comprehensive comparison of DIY versus professional drywall installation costs, quality, and outcomes. Real case studies from Northern Virginia projects show why most homeowners choose professional contractors.
-            </p>
-            <div className="mt-8 flex items-center justify-center space-x-6 text-green-100">
-              <div className="flex items-center">
-                <UserIcon className="h-5 w-5 mr-2" />
-                <span>Wall Fix Pros Expert Team</span>
-              </div>
-              <div className="flex items-center">
-                <CalendarIcon className="h-5 w-5 mr-2" />
-                <span>December 10, 2024</span>
-              </div>
-              <div className="flex items-center">
-                <ClockIcon className="h-5 w-5 mr-2" />
-                <span>14 min read</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ArticleHero slug="diy-vs-professional-drywall-installation-virginia" />
 
-      {/* Article Content */}
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Introduction */}
         <div className="prose max-w-none">
@@ -534,6 +506,7 @@ export default function DIYvsProfessionalPage() {
           </div>
         </section>
       </div>
+      <ArticleFooter slug="diy-vs-professional-drywall-installation-virginia" />
     </div>
   )
 }

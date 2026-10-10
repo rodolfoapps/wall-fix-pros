@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import ArticleHero from '@/components/ArticleHero'
+import ArticleFooter from '@/components/ArticleFooter'
 import Link from 'next/link'
-import { CalendarIcon, ClockIcon, UserIcon, WrenchScrewdriverIcon, ExclamationTriangleIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
+import { ClockIcon, WrenchScrewdriverIcon, ExclamationTriangleIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/blog/fix-common-drywall-problems-maryland-homes/' },
@@ -195,38 +197,8 @@ export default function FixDrywallProblemsPage() {
   return (
     <div className="bg-white">
       {/* Article Header */}
-      <div className="relative bg-blue-700">
-        <div className="absolute inset-0 bg-blue-700 opacity-75" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
-              Repair Guide
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              How to Fix Common Drywall Problems in Maryland Homes
-            </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-xl text-blue-100">
-              A complete guide to identifying, diagnosing, and repairing the most common drywall issues facing Maryland homeowners, with professional techniques and local considerations.
-            </p>
-            <div className="mt-8 flex items-center justify-center space-x-6 text-blue-100">
-              <div className="flex items-center">
-                <UserIcon className="h-5 w-5 mr-2" />
-                <span>Wall Fix Pros Expert Team</span>
-              </div>
-              <div className="flex items-center">
-                <CalendarIcon className="h-5 w-5 mr-2" />
-                <span>December 15, 2024</span>
-              </div>
-              <div className="flex items-center">
-                <ClockIcon className="h-5 w-5 mr-2" />
-                <span>15 min read</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ArticleHero slug="fix-common-drywall-problems-maryland-homes" />
 
-      {/* Article Content */}
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Introduction */}
         <div className="prose max-w-none">
@@ -588,6 +560,7 @@ export default function FixDrywallProblemsPage() {
           </div>
         </section>
       </div>
+      <ArticleFooter slug="fix-common-drywall-problems-maryland-homes" />
     </div>
   )
 }

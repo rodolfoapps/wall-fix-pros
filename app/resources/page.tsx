@@ -1,4 +1,15 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import PageHero from '@/components/PageHero'
+import CTABand from '@/components/CTABand'
+import { resourceImages } from '@/lib/images'
+
+const resourceTitles: Record<string, string> = {
+  'drywall-repair-guide': 'Drywall Repair Guide',
+  'maintenance-tips': 'Maintenance Tips',
+  'emergency-response': 'Emergency Response',
+  'quality-standards': 'Quality Standards',
+}
 import Link from 'next/link'
 import { DocumentTextIcon, WrenchScrewdriverIcon, ClockIcon, ShieldCheckIcon, ChevronRightIcon, BookOpenIcon } from '@heroicons/react/24/outline'
 
@@ -81,20 +92,31 @@ export default function ResourcesPage() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative bg-brand-blue-700">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-brand-blue-700 opacity-75" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Drywall Resources
-          </h1>
-          <p className="mt-6 max-w-3xl text-xl text-brand-blue-100">
-            Expert tips, guides, and resources to help you understand drywall repair and maintenance.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        src={resourceImages['drywall-repair-guide'].hero}
+        alt={resourceImages['drywall-repair-guide'].alt}
+        title="Drywall Resources"
+        subtitle="Plain-English guides to what goes wrong with drywall, what to do first, and what good work looks like."
+      />
+
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <p className="eyebrow">Guides</p>
+        <h2 className="mt-2 section-title">Start here</h2>
+        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {Object.entries(resourceImages).map(([slug, img]) => (
+            <li key={slug}>
+              <Link href={`/resources/${slug}/`} className="group block overflow-hidden rounded-xl bg-white shadow-card ring-1 ring-ink-200 hover:ring-brand-400">
+                <div className="relative aspect-[3/2]">
+                  <Image src={img.card} alt={img.alt} fill sizes="(max-width: 640px) 100vw, 25vw" className="object-cover transition group-hover:scale-105" />
+                </div>
+                <div className="p-4">
+                  <h3 className="font-bold text-ink-900 group-hover:text-brand-600">{resourceTitles[slug]}</h3>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       {/* Resources Grid */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -213,6 +235,7 @@ export default function ResourcesPage() {
           </div>
         </div>
       </div>
+      <CTABand />
     </div>
   )
 }

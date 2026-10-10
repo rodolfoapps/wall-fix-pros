@@ -1,4 +1,7 @@
 import type { Metadata } from 'next'
+import PageHero from '@/components/PageHero'
+import CTABand from '@/components/CTABand'
+import { resourceImages } from '@/lib/images'
 import Link from 'next/link'
 import { CheckCircleIcon, ExclamationTriangleIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline'
 
@@ -104,18 +107,13 @@ export default function DrywallRepairGuidePage() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative bg-blue-700">
-        <div className="absolute inset-0 bg-blue-700 opacity-75" />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Complete Drywall Repair Guide
-          </h1>
-          <p className="mt-6 max-w-3xl text-xl text-blue-100">
-            Expert guidance on identifying, assessing, and repairing drywall damage. Learn professional techniques and when to call the experts.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        src={resourceImages['drywall-repair-guide'].hero}
+        alt={resourceImages['drywall-repair-guide'].alt}
+        eyebrow={<span className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white ring-1 ring-white/20">Homeowner resource</span>}
+        title="Complete Drywall Repair Guide"
+        subtitle="Expert guidance on identifying, assessing, and repairing drywall damage. Learn professional techniques and when to call the experts."
+      />
 
       {/* Damage Types */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -274,6 +272,7 @@ export default function DrywallRepairGuidePage() {
           </div>
         </div>
       </div>
+      <CTABand heading="Rather have us look at it?" text="Free written estimate. We tell you what it needs and what it costs, then you decide." />
     </div>
   )
 }
