@@ -1,0 +1,73 @@
+/** Per-service process steps with real descriptions, shown on the service hub pages. */
+export const processSteps: Record<string, { title: string; text: string }[]> = {
+  'drywall-installation': [
+    { title: 'Site assessment and measurements', text: 'We measure every wall and ceiling, note window and door openings, and check the framing is straight before a single sheet is ordered.' },
+    { title: 'Material selection and ordering', text: 'Standard, moisture-resistant or fire-rated board depending on the room, in the largest sheets the space allows so there are fewer seams to finish.' },
+    { title: 'Preparation of work area', text: 'Floors covered, electrical boxes marked, insulation and vapor barrier checked. Anything we hang over, we photograph first.' },
+    { title: 'Professional installation', text: 'Sheets hung horizontally with screws on 12 to 16 inch centers, seams staggered, cut-outs made tight around boxes and fixtures.' },
+    { title: 'Quality inspection and cleanup', text: 'Every screw head checked, every seam ready for tape. We leave the room swept and the scrap hauled away.' },
+  ],
+  'drywall-repair': [
+    { title: 'Damage assessment', text: 'We find out why it failed, not just where. A crack from settling and a crack from a leak get different repairs.' },
+    { title: 'Preparation and cleaning', text: 'Loose paper and crumbling board cut back to solid material, dust vacuumed, the area taped off from the rest of the room.' },
+    { title: 'Repair application', text: 'Patch, mesh or paper tape and setting-type compound in thin coats, feathered 8 to 12 inches past the damage so the edge disappears.' },
+    { title: 'Texture matching', text: 'Orange peel, knockdown, smooth or skip trowel, matched to the surrounding wall so the patch does not show in side light.' },
+    { title: 'Prime and paint prep', text: 'The repair is primed so paint takes evenly. Bring the original paint and we blend it in; otherwise we tell you exactly what to buy.' },
+  ],
+  'drywall-patching': [
+    { title: 'Area preparation', text: 'The hole is squared up with a clean cut, wires and pipes behind the wall located, and the opening measured for the patch.' },
+    { title: 'Patch selection and fitting', text: 'Self-adhesive mesh for small holes, a California patch for mid-size ones, a backed board patch for anything bigger than a hand.' },
+    { title: 'Compound application', text: 'Two to three thin coats of compound, each dried and feathered wider than the last so there is no bump to catch the light.' },
+    { title: 'Sanding and smoothing', text: 'Sanded flush with dust extraction, then checked with a straightedge and a raking light before any texture goes on.' },
+    { title: 'Texture and finish matching', text: 'The surrounding texture is reproduced over the patch and the whole area is primed so it paints as one surface.' },
+  ],
+  'drywall-taping': [
+    { title: 'Tape application to joints', text: 'Paper tape bedded in setting compound on flat seams and inside corners, metal or paper-faced bead on outside corners.' },
+    { title: 'First coat of mud', text: 'The fill coat covers tape and screws. We use a setting compound here because it shrinks less and will not crack later.' },
+    { title: 'Second coat application', text: 'A wider coat with a 10-inch knife builds the seam out so it flattens into the wall rather than standing proud.' },
+    { title: 'Final coat and smoothing', text: 'A thin 12-inch skim coat, then any Level 5 skim over the whole wall if the room has strong side light or a glossy finish.' },
+    { title: 'Professional sanding', text: 'Sanded to a uniform surface with vacuum sanders, then inspected under a work light held at a low angle to catch ridges.' },
+  ],
+  'drywall-texturing': [
+    { title: 'Surface preparation', text: 'Seams and patches finished flat, the wall primed so the texture bonds and dries evenly instead of soaking in unevenly.' },
+    { title: 'Texture selection', text: 'We show samples on a scrap board: orange peel, knockdown, skip trowel, sand or smooth. Matching an existing wall is the usual job.' },
+    { title: 'Material mixing', text: 'Compound thinned to the right consistency for the chosen pattern and spray tip. Too thick or too thin and the pattern never matches.' },
+    { title: 'Professional application', text: 'Hopper gun or hand trowel depending on the pattern, applied in consistent passes so the texture reads the same across the whole wall.' },
+    { title: 'Final inspection and touch-ups', text: 'Checked once dry under side light. Any thin spot gets a second pass before the wall is primed for paint.' },
+  ],
+  'drywall-restoration': [
+    { title: 'Comprehensive damage evaluation', text: 'Old plaster, previous repairs, moisture and movement all assessed so we restore the right way instead of covering problems up.' },
+    { title: 'Removal of damaged materials', text: 'Failed plaster, soft board and crumbling corners come out. Sound original material stays so the room keeps its character.' },
+    { title: 'Structural repairs if needed', text: 'Loose lath re-secured, bowed studs shimmed, any rot or termite damage flagged before new surfaces go up.' },
+    { title: 'New drywall installation', text: 'New board fitted to match the original wall thickness so trim and casings sit right, or a skim coat over sound plaster.' },
+    { title: 'Finishing and texture matching', text: 'Finished to match the room, including period details like plaster-smooth walls or original textures.' },
+  ],
+  'ceiling-services': [
+    { title: 'Ceiling assessment', text: 'Cracks, stains, sags and popcorn texture each tell a different story. We look at the attic side too, not just the room.' },
+    { title: 'Structural evaluation', text: 'Joist spacing, truss movement and fastener pull-through checked so the repair addresses the cause and not just the symptom.' },
+    { title: 'Material preparation', text: 'Ceiling-rated board for spans that need it, a fan brace where a fixture was hung on drywall alone, and full room protection below.' },
+    { title: 'Professional installation/repair', text: 'Overhead work with lifts and stilts, screws on tight centers, and a floating corner where trusses move seasonally.' },
+    { title: 'Finishing and texture application', text: 'Seams finished and texture matched or removed to a smooth finish, then primed so the ceiling paints as one surface.' },
+  ],
+  'insulation-services': [
+    { title: 'Energy assessment', text: 'We check where the house is losing heat: open wall cavities, uninsulated knee walls, basements and garage ceilings.' },
+    { title: 'Insulation type selection', text: 'Fiberglass batts, mineral wool for sound and fire resistance, or rigid foam where moisture is a concern. Rated for the local code.' },
+    { title: 'Area preparation', text: 'Cavities cleared, air leaks sealed at top and bottom plates, and a vapor barrier planned for the climate side of the wall.' },
+    { title: 'Professional installation', text: 'Batts cut to fit without compressing or gaps, split around wiring and boxes, and faced correctly for the room.' },
+    { title: 'Quality inspection', text: 'Every cavity checked before the drywall goes on. Once it is covered, nobody is looking again for thirty years.' },
+  ],
+  'water-damage-repair': [
+    { title: 'Emergency assessment', text: 'Same-day visit for active leaks. We stabilize sagging ceilings, locate the source and tell you if a plumber or roofer is needed first.' },
+    { title: 'Water extraction and drying', text: 'Wet drywall and insulation removed, the cavity dried with fans and dehumidifiers, and moisture readings taken before we rebuild.' },
+    { title: 'Damage evaluation', text: 'Board is checked for softness and staining well beyond the visible mark. Mold is flagged and handled before anything is closed up.' },
+    { title: 'Removal of damaged materials', text: 'Clean cuts to the nearest stud or joist so the new piece has solid backing on every edge.' },
+    { title: 'Complete restoration and repair', text: 'New board, taped and finished, texture matched and stain-blocking primer applied so the mark never bleeds through.' },
+  ],
+  'painting-services': [
+    { title: 'Surface preparation', text: 'Nail holes filled, glossy surfaces scuffed, drywall dust removed and new compound primed. Preparation is most of a good paint job.' },
+    { title: 'Primer application', text: 'New drywall and repairs get a dedicated primer so the topcoat sheen is even and patched areas do not flash through.' },
+    { title: 'Color consultation', text: 'Sample swatches on the actual wall in the actual light, because a chip under store lighting is a different color at home.' },
+    { title: 'Professional painting', text: 'Cut in by hand, rolled in consistent passes, two coats as standard. Trim and ceilings masked, not just hoped for.' },
+    { title: 'Final inspection and touch-ups', text: 'Walked with you in daylight. Anything you can see, we fix before we take the drop cloths up.' },
+  ],
+}

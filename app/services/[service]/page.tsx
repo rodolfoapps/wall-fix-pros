@@ -13,6 +13,7 @@ import FAQ from '@/components/FAQ'
 import CTABand from '@/components/CTABand'
 import ProcessSteps from '@/components/ProcessSteps'
 import { serviceFaqs } from '@/lib/faqs'
+import { processSteps } from '@/lib/processSteps'
 
 type ServicePageProps = {
   params: { service: string }
@@ -68,18 +69,17 @@ export default function ServicePage({ params }: ServicePageProps) {
   const label = serviceLabel(service.name)
   const image = serviceImages[params.service] ?? serviceImages['drywall-repair']
 
-  // Every city we serve, linking to the canonical service+city page under /locations/.
-  const allCities = Object.entries(locationsData.states).flatMap(([stateSlug, state]) =>
-    state.cities.map(citySlug => {
-      const city = locationsData.cities[citySlug as keyof typeof locationsData.cities]
-      return city ? {
-        name: city.name,
-        stateName: state.name,
-        slug: citySlug,
-        href: locationServicePath(stateSlug, citySlug, params.service)
-      } : null
-    }).filter(Boolean)
-  )
+  // Every city we serve, grouped by state, linking to the canonical service+city page under /locations/.
+  const citiesByState = Object.entries(locationsData.states).map(([stateSlug, state]) => ({
+    slug: stateSlug,
+    name: state.name,
+    cities: state.cities
+      .map((citySlug) => {
+        const city = locationsData.cities[citySlug as keyof typeof locationsData.cities]
+        return city ? { name: city.name, slug: citySlug, isHeadquarters: city.isHeadquarters, href: locationServicePath(stateSlug, citySlug, params.service) } : null
+      })
+      .filter((c): c is NonNullable<typeof c> => Boolean(c)),
+  }))
 
   return (
     <div className="bg-white">
@@ -169,77 +169,72 @@ export default function ServicePage({ params }: ServicePageProps) {
       </div>
 
       {/* Benefits section */}
-      <div className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-brand-orange-600">Quality Service</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Why Choose Our {service.name}?
-            </p>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Our experienced team delivers exceptional {service.name.toLowerCase()} services with attention to detail and customer satisfaction.
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-start">
+          <div>
+            <p className="eyebrow">Why us</p>
+            <h2 className="mt-2 section-title">Why choose our {label.toLowerCase()}</h2>
+            <p className="mt-4 text-lg text-ink-600">
+              {service.shortDescription}. Every job comes with a written estimate, a {service.warranty.toLowerCase()}, and a crew that cleans up.
             </p>
           </div>
-          
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-              {service.benefits.map((benefit) => (
-                <div key={benefit} className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-gray-900">
-                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange-500">
-                      <CheckIcon className="h-6 w-6 text-white" aria-hidden="true" />
-                    </div>
-                    {benefit}
-                  </dt>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <ul className="grid gap-4 sm:grid-cols-2">
+            {service.benefits.map((benefit) => (
+              <li key={benefit} className="flex items-start gap-3 rounded-xl bg-ink-50 p-4 ring-1 ring-ink-200">
+                <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand-500 text-white">
+                  <CheckIcon className="h-3.5 w-3.5" aria-hidden="true" />
+                </span>
+                <span className="font-medium text-ink-900">{benefit}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
+      </section>
 
       <ProcessSteps
         heading={`How we handle your ${service.name.toLowerCase()} project`}
-        steps={service.process.map((step) => ({ title: step }))}
+        intro={`Five steps, the same every time. The estimate you approve covers all of them.`}
+        steps={processSteps[params.service] ?? service.process.map((step) => ({ title: step }))}
       />
 
-      {/* Service locations */}
-      <div className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              {label} Available In
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-gray-600">
-              Professional {service.name.toLowerCase()} services throughout our service area
-            </p>
-          </div>
-          
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-4 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4">
-            {allCities.map((city) => city && (
-              <div key={city.slug} className="text-center p-4 border border-gray-200 rounded-lg hover:border-brand-blue-300 hover:shadow-sm transition-all">
-                <h3 className="font-semibold text-gray-900">{city.name}</h3>
-                <p className="text-sm text-gray-600">{city.stateName}</p>
-                <Link
-                  href={city.href}
-                  className="mt-2 inline-block text-sm font-semibold text-brand-blue-600 hover:text-brand-blue-700"
-                >
-                  {service.name} in {city.name} →
-                </Link>
+      {/* Service locations, grouped by state */}
+      <section className="bg-ink-50">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <p className="eyebrow">Where we do it</p>
+          <h2 className="mt-2 section-title">{label} across four states</h2>
+          <p className="mt-4 max-w-2xl text-lg text-ink-600">
+            Pick your city for local response times, pricing and a page you can send to a neighbor.
+          </p>
+          <div className="mt-10 grid gap-8 lg:grid-cols-2">
+            {citiesByState.map((state) => (
+              <div key={state.slug} className="rounded-xl bg-white p-6 shadow-card ring-1 ring-ink-200">
+                <div className="flex items-baseline justify-between">
+                  <h3 className="text-xl font-bold text-ink-900">{state.name}</h3>
+                  <Link href={`/locations/${state.slug}/`} className="text-sm font-semibold text-brand-600 hover:underline">
+                    {state.cities.length} cities →
+                  </Link>
+                </div>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {state.cities.map((city) => (
+                    <li key={city.slug}>
+                      <Link
+                        href={city.href}
+                        className={`inline-block rounded-full border px-3.5 py-1.5 text-sm transition ${
+                          city.isHeadquarters
+                            ? 'border-brand-500 bg-brand-500 text-white hover:bg-brand-600'
+                            : 'border-ink-200 text-ink-700 hover:border-brand-400 hover:text-brand-600'
+                        }`}
+                      >
+                        {city.name}{city.isHeadquarters ? ' · HQ' : ''}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
-          
-          <div className="mt-16 text-center">
-            <Link
-              href="/locations"
-              className="rounded-md border border-transparent bg-brand-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-brand-blue-700"
-            >
-              View All Service Areas
-            </Link>
-          </div>
         </div>
-      </div>
+      </section>
 
       <FAQ items={serviceFaqs(service)} heading={`${service.name} questions`} />
 

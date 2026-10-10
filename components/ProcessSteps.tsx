@@ -19,7 +19,7 @@ export default function ProcessSteps({ steps = defaultSteps, heading = 'How it w
         <p className="eyebrow">Simple process</p>
         <h2 className={`mt-2 section-title ${dark ? 'text-white' : ''}`}>{heading}</h2>
         {intro && <p className={`mt-4 max-w-2xl text-lg ${dark ? 'text-ink-200' : 'text-ink-600'}`}>{intro}</p>}
-        <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className={`mt-12 grid gap-8 sm:grid-cols-2 ${steps.length === 5 ? "lg:grid-cols-5" : "lg:grid-cols-4"}`}>
           {steps.map((step, i) => (
             <li key={step.title} className="relative">
               <span className="font-heading text-5xl font-extrabold text-brand-500">{String(i + 1).padStart(2, '0')}</span>
