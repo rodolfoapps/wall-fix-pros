@@ -4,6 +4,8 @@ import { MapPinIcon, ClockIcon, PhoneIcon, CheckIcon } from '@heroicons/react/24
 import locationsData from '../../../../../data/locations.json'
 import servicesData from '../../../../../data/services.json'
 import { clampDescription, locationServicePath, serviceLabel } from '@/lib/seo'
+import { serviceImages, localizedServiceAlt } from '@/lib/images'
+import PageHero from '@/components/PageHero'
 
 interface Props {
   params: { state: string; city: string; 'service-city': string }
@@ -77,6 +79,7 @@ export default function LocationServicePage({ params }: Props) {
     )
   }
 
+  const image = serviceImages[serviceSlug] ?? serviceImages['drywall-repair']
   const otherServices = Object.values(servicesData).filter((s) => s.slug !== service.slug)
   const nearbyCities = state.cities
     .filter((slug) => slug !== city.slug)
@@ -100,42 +103,46 @@ export default function LocationServicePage({ params }: Props) {
         </ol>
       </nav>
 
-      {/* Hero Section */}
-      <div className="relative bg-blue-700">
-        <div className="absolute inset-0 bg-blue-700 opacity-75" />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="flex items-center mb-4">
+      <PageHero
+        src={image.hero}
+        alt={localizedServiceAlt(serviceSlug, city.name, state.abbreviation)}
+        eyebrow={
+          <>
             {city.isHeadquarters && (
-              <div className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium mr-4">
+              <span className="rounded-full bg-orange-500 px-3 py-1 text-sm font-medium text-white">
                 Headquarters Location
-              </div>
+              </span>
             )}
-            <div className="flex items-center text-blue-100">
-              <MapPinIcon className="h-5 w-5 mr-2" />
-              <span>{city.name}, {state.abbreviation}</span>
-            </div>
-          </div>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            {service.name} in {city.name}
-          </h1>
-          <p className="mt-6 max-w-3xl text-xl text-blue-100">
-            Professional {service.name.toLowerCase()} services in {city.name}, {state.name}. 
-            {city.isHeadquarters 
+            <span className="flex items-center">
+              <MapPinIcon className="mr-2 h-5 w-5" />
+              {city.name}, {state.abbreviation}
+            </span>
+          </>
+        }
+        title={<>{service.name} in {city.name}</>}
+        subtitle={
+          <>
+            Professional {service.name.toLowerCase()} services in {city.name}, {state.name}.
+            {city.isHeadquarters
               ? ' Our headquarters location provides the fastest response times and most comprehensive service options.'
-              : ' Quality craftsmanship with the same professional standards we maintain throughout our service area.'
-            }
-          </p>
-          <div className="mt-8 flex items-center space-x-6 text-blue-100">
-            <div className="flex items-center">
-              <ClockIcon className="h-5 w-5 mr-2" />
-              <span>Response: {city.responseTime}</span>
-            </div>
-            <div className="flex items-center">
-              <span className="font-medium">{service.priceRange}</span>
-            </div>
-          </div>
+              : ' Quality craftsmanship with the same professional standards we maintain throughout our service area.'}
+          </>
+        }
+      >
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-blue-100">
+          <span className="flex items-center">
+            <ClockIcon className="mr-2 h-5 w-5" />
+            Response: {city.responseTime}
+          </span>
+          <span className="font-medium">{service.priceRange}</span>
+          <Link
+            href="/quote"
+            className="rounded-md bg-brand-orange-500 px-5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-brand-orange-600"
+          >
+            Get Free Quote
+          </Link>
         </div>
-      </div>
+      </PageHero>
 
       {/* Service & Location Details */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

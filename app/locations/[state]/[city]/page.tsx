@@ -4,6 +4,8 @@ import { MapPinIcon, ClockIcon, PhoneIcon, StarIcon } from '@heroicons/react/24/
 import locationsData from '../../../../data/locations.json'
 import servicesData from '../../../../data/services.json'
 import { clampDescription, locationServicePath } from '@/lib/seo'
+import { stateImages } from '@/lib/images'
+import PageHero from '@/components/PageHero'
 
 interface Props {
   params: { state: string; city: string }
@@ -61,44 +63,40 @@ export default function CityPage({ params }: Props) {
   }
 
   const services = Object.values(servicesData)
+  const image = stateImages[params.state] ?? stateImages.maryland
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative bg-blue-700">
-        <div className="absolute inset-0 bg-blue-700 opacity-75" />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="flex items-center mb-4">
+      <PageHero
+        src={image.hero}
+        alt={`Drywall repair and installation services in ${city.name}, ${state.abbreviation} – ${image.alt}`}
+        eyebrow={
+          <>
             {city.isHeadquarters && (
-              <div className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium mr-4">
-                Headquarters
-              </div>
+              <span className="rounded-full bg-orange-500 px-3 py-1 text-sm font-medium text-white">Headquarters</span>
             )}
-            <div className="flex items-center text-blue-100">
-              <MapPinIcon className="h-5 w-5 mr-2" />
-              <span>{city.name}, {state.abbreviation}</span>
-            </div>
-          </div>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Drywall Services in {city.name}
-          </h1>
-          <p className="mt-6 max-w-3xl text-xl text-blue-100">
-            {city.description}
-          </p>
-          <div className="mt-8 flex items-center space-x-6 text-blue-100">
-            <div className="flex items-center">
-              <ClockIcon className="h-5 w-5 mr-2" />
-              <span>Response time: {city.responseTime}</span>
-            </div>
-            {city.emergencyService && (
-              <div className="flex items-center">
-                <StarIcon className="h-5 w-5 mr-2" />
-                <span>24/7 Emergency Service</span>
-              </div>
-            )}
-          </div>
+            <span className="flex items-center">
+              <MapPinIcon className="mr-2 h-5 w-5" />
+              {city.name}, {state.abbreviation}
+            </span>
+          </>
+        }
+        title={<>Drywall Services in {city.name}</>}
+        subtitle={city.description}
+      >
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-blue-100">
+          <span className="flex items-center">
+            <ClockIcon className="mr-2 h-5 w-5" />
+            Response time: {city.responseTime}
+          </span>
+          {city.emergencyService && (
+            <span className="flex items-center">
+              <StarIcon className="mr-2 h-5 w-5" />
+              24/7 Emergency Service
+            </span>
+          )}
         </div>
-      </div>
+      </PageHero>
 
       {/* City Info */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

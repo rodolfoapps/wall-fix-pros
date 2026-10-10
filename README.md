@@ -141,6 +141,22 @@ Frederick is the headquarters location and receives enhanced SEO:
 - **Established**: 2015
 - **License**: MHIC #123456
 
+## 🖼 Imagery
+
+All photography lives under `public/images/` as WebP and is registered in `lib/images.ts`
+(path + keyword-targeted alt text). Every file carries copyright and keyword metadata
+(EXIF `Copyright`/`Artist`, XMP `dc:title`, `dc:description`, `dc:subject`, `dc:rights`).
+
+To add or replace images: drop the source files in a folder, describe them in a manifest
+(see `scripts/process-images.js` for the shape), then run
+
+```bash
+node scripts/process-images.js manifest.json ./source-folder
+```
+
+It writes `<name>-hero.webp` (1920×1080) and `<name>-card.webp` (900×600) and embeds the
+metadata (requires `exiftool` on PATH). Pages render heroes through `components/PageHero.tsx`.
+
 ## 🎨 Design System
 
 ### Colors

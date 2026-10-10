@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { CheckIcon } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 import servicesData from '@/data/services.json'
+import { serviceImages } from '@/lib/images'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services/' },
@@ -15,19 +16,6 @@ export const metadata: Metadata = {
     description: 'Complete drywall and wall repair services serving MD, VA, WV, PA. Expert installation, repair, and restoration.',
     url: '/services/',
   },
-}
-
-const serviceImages: { [key: string]: string } = {
-  'drywall-installation': '/images/services/Drywall-Installation-300x210.webp',
-  'drywall-repair': '/images/services/Drywall-Repair-300x210.webp',
-  'drywall-patching': '/images/services/Drywall-Patching-300x210.webp',
-  'drywall-taping': '/images/services/Drywall-Taping-300x210.webp',
-  'drywall-texturing': '/images/services/Drywall-Texturing-300x210.webp',
-  'drywall-restoration': '/images/services/Drywall-Restoration-300x210.webp',
-  'ceiling-services': '/images/services/Drywall-Celling-300x210.webp',
-  'insulation-services': '/images/services/Drywall-Insullation-300x210.webp',
-  'water-damage-repair': '/images/services/Water-Damage-300x210.webp',
-  'painting-services': '/images/services/Draywall-Painting-300x210.webp'
 }
 
 export default function ServicesPage() {
@@ -80,9 +68,10 @@ export default function ServicesPage() {
               <div key={slug} className="relative overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-gray-200 hover:shadow-xl transition-shadow group">
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image
-                    src={serviceImages[slug]}
-                    alt={`${service.name} services by Wall Fix Pros`}
+                    src={serviceImages[slug].card}
+                    alt={serviceImages[slug].alt}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>

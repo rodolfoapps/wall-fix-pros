@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { MapPinIcon, ClockIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { stateImages } from '@/lib/images'
+import PageHero from '@/components/PageHero'
 import locationsData from '../../../data/locations.json'
 
 interface Props {
@@ -52,20 +54,16 @@ export default function StatePage({ params }: Props) {
     return cityData ? { ...cityData, slug: citySlug } : null
   }).filter(Boolean)
 
+  const image = stateImages[params.state] ?? stateImages.maryland
+
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative bg-blue-700">
-        <div className="absolute inset-0 bg-blue-700 opacity-75" />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Drywall Services in {state.name}
-          </h1>
-          <p className="mt-6 max-w-3xl text-xl text-blue-100">
-            {state.description}
-          </p>
-        </div>
-      </div>
+      <PageHero
+        src={image.hero}
+        alt={`Drywall contractors serving ${state.name} – ${image.alt}`}
+        title={<>Drywall Services in {state.name}</>}
+        subtitle={state.description}
+      />
 
       {/* State Information */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

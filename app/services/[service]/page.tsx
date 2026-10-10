@@ -5,6 +5,8 @@ import type { Metadata } from 'next'
 import servicesData from '@/data/services.json'
 import locationsData from '@/data/locations.json'
 import { clampDescription, serviceLabel, locationServicePath } from '@/lib/seo'
+import { serviceImages } from '@/lib/images'
+import PageHero from '@/components/PageHero'
 
 type ServicePageProps = {
   params: { service: string }
@@ -58,6 +60,7 @@ export default function ServicePage({ params }: ServicePageProps) {
   }
 
   const label = serviceLabel(service.name)
+  const image = serviceImages[params.service] ?? serviceImages['drywall-repair']
 
   // Every city we serve, linking to the canonical service+city page under /locations/.
   const allCities = Object.entries(locationsData.states).flatMap(([stateSlug, state]) =>
@@ -99,33 +102,27 @@ export default function ServicePage({ params }: ServicePageProps) {
         </ol>
       </nav>
 
-      {/* Hero section */}
-      <div className="relative isolate px-6 pt-14 lg:px-8">
-        <div className="mx-auto max-w-4xl py-24 sm:py-32">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Professional {label}
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              {service.longDescription}
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                href="/quote"
-                className="rounded-md bg-brand-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-brand-orange-600"
-              >
-                Get Free Quote
-              </Link>
-              <a 
-                href="tel:+12406701949" 
-                className="text-lg font-semibold leading-6 text-gray-900 hover:text-brand-blue-600"
-              >
-                Call: (240) 670-1949
-              </a>
-            </div>
-          </div>
+      <PageHero
+        src={image.hero}
+        alt={image.alt}
+        title={<>Professional {label}</>}
+        subtitle={service.longDescription}
+        align="center"
+      >
+        <div className="flex items-center justify-center gap-x-6">
+          <Link
+            href="/quote"
+            className="rounded-md bg-brand-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-brand-orange-600"
+          >
+            Get Free Quote
+          </Link>
+          <a href="tel:+12406701949" className="text-lg font-semibold leading-6 text-white hover:text-blue-100">
+            Call: (240) 670-1949
+          </a>
         </div>
+      </PageHero>
 
+      <div className="relative px-6 lg:px-8">
         {/* Key details */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-none">

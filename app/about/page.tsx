@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { aboutHero } from '@/lib/images'
+import PageHero from '@/components/PageHero'
 import { CheckCircleIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
@@ -19,20 +21,12 @@ export default function AboutPage() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative bg-brand-blue-700">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-brand-blue-700 opacity-75" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            About Wall Fix Pros
-          </h1>
-          <p className="mt-6 max-w-3xl text-xl text-brand-blue-100">
-            Your trusted drywall repair experts serving the Mid-Atlantic region with professional, reliable service since 2015.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        src={aboutHero.hero}
+        alt={aboutHero.alt}
+        title="About Wall Fix Pros"
+        subtitle="Your trusted drywall repair experts serving the Mid-Atlantic region with professional, reliable service since 2015."
+      />
 
       {/* Main Content */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { CheckIcon, MapPinIcon, ClockIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
+import { serviceImages, homeHero } from '@/lib/images'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -21,37 +23,31 @@ const services = [
     name: 'Drywall Installation',
     description: 'Professional installation for new construction and renovations',
     href: '/services/drywall-installation',
-    image: '/images/services/Drywall-Installation-300x210.webp'
   },
   {
     name: 'Drywall Repair', 
     description: 'Expert repair services for holes, cracks, and damage',
     href: '/services/drywall-repair',
-    image: '/images/services/Drywall-Repair-300x210.webp'
   },
   {
     name: 'Water Damage Repair',
     description: '24/7 emergency water damage restoration services',
     href: '/services/water-damage-repair', 
-    image: '/images/services/Water-Damage-300x210.webp'
   },
   {
     name: 'Ceiling Services',
     description: 'Complete ceiling installation, repair, and finishing',
     href: '/services/ceiling-services',
-    image: '/images/services/Drywall-Celling-300x210.webp'
   },
   {
     name: 'Drywall Texturing',
     description: 'Custom texturing to match any wall finish',
     href: '/services/drywall-texturing',
-    image: '/images/services/Drywall-Texturing-300x210.webp'
   },
   {
     name: 'Painting Services',
     description: 'Professional interior and exterior painting',
     href: '/services/painting-services',
-    image: '/images/services/Draywall-Painting-300x210.webp'
   }
 ]
 
@@ -83,45 +79,32 @@ export default function HomePage() {
     <div className="bg-white">
       {/* Hero section */}
       <div className="relative isolate">
-        {/* Hero Image */}
-        <div className="relative h-[400px] sm:h-[500px] lg:h-[600px]">
-          <Image
-            src="/images/hero/hero-desktop.webp"
-            alt="Professional drywall and wall repair services by Wall Fix Pros"
-            fill
-            priority
-            className="object-cover"
-            sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
-            quality={85}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
-        </div>
-        
-        {/* Hero Content */}
-        <div className="absolute inset-0 flex items-start justify-center px-6 pt-24 sm:pt-32 lg:px-8 lg:pt-40">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl drop-shadow-lg">
-              Professional Drywall & Wall Repair Services
-            </h1>
-            <p className="mt-3 text-lg leading-8 text-white/90 drop-shadow-md">
-              Expert drywall installation, repair, and wall services serving <strong>Maryland</strong>, <strong>Virginia</strong>, <strong>West Virginia</strong>, and <strong>Pennsylvania</strong>. Licensed, insured, and trusted since 2015.
-            </p>
-            <div className="mt-6 flex items-center justify-center gap-x-6">
-              <Link
-                href="/quote"
-                className="rounded-md bg-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
-              >
-                Get Free Quote
-              </Link>
-              <a 
-                href="tel:+12406701949" 
-                className="text-lg font-semibold leading-6 text-white hover:text-orange-300 drop-shadow-md"
-              >
-                Call Now: (240) 670-1949 <span aria-hidden="true">→</span>
-              </a>
-            </div>
+        <PageHero
+          src={homeHero.hero}
+          alt={homeHero.alt}
+          title="Professional Drywall & Wall Repair Services"
+          subtitle={
+            <>
+              Expert drywall installation, repair, and wall services serving <strong>Maryland</strong>,{' '}
+              <strong>Virginia</strong>, <strong>West Virginia</strong>, and <strong>Pennsylvania</strong>. Licensed,
+              insured, and trusted since 2015.
+            </>
+          }
+          align="center"
+          size="tall"
+        >
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
+            <Link
+              href="/quote"
+              className="rounded-md bg-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
+            >
+              Get Free Quote
+            </Link>
+            <a href="tel:+12406701949" className="text-lg font-semibold leading-6 text-white hover:text-orange-300">
+              Call Now: (240) 670-1949 <span aria-hidden="true">→</span>
+            </a>
           </div>
-        </div>
+        </PageHero>
 
         {/* Stats */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -160,9 +143,10 @@ export default function HomePage() {
                   <dt className="text-base font-semibold leading-7 text-gray-900">
                     <div className="mb-6 relative h-48 w-full overflow-hidden rounded-lg">
                       <Image
-                        src={service.image}
-                        alt={`${service.name} services by Wall Fix Pros`}
+                        src={serviceImages[service.href.replace('/services/', '')].card}
+                        alt={serviceImages[service.href.replace('/services/', '')].alt}
                         fill
+                        sizes="(max-width: 1024px) 100vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
